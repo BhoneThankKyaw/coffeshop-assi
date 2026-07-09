@@ -2630,6 +2630,9 @@ COFFEE SELECTION SECTION */
 
 .offers .menu-btn {
   display: none;
+  border: none;
+  background: transparent;
+  color: var(--primary);
   font-size: 2rem;
   cursor: pointer;
 }
@@ -2869,6 +2872,12 @@ COFFEE SELECTION SECTION */
   margin-bottom: 1.5rem;
 }
 
+.offers .offer-card-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+}
+
 .offers .offer-meta {
   display: flex;
   justify-content: space-between;
@@ -2885,6 +2894,10 @@ COFFEE SELECTION SECTION */
 
 .offers .add-offer {
   width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  margin-top: auto;
+  text-align: center;
 }
 
 .offers .add-offer.added {
@@ -2989,14 +3002,198 @@ COFFEE SELECTION SECTION */
   transform: translateY(0);
 }
 
+.offers .subscription-section {
+  padding: 0 8% 6rem;
+}
+
+.offers .plan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.offers .plan-card {
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: 0.4s ease;
+}
+
+.offers .plan-card:hover {
+  transform: translateY(-10px);
+}
+
+.offers .featured-plan {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.offers .plan-label {
+  display: inline-flex;
+  width: max-content;
+  margin-bottom: 1rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--accent);
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.offers .featured-plan .plan-label {
+  background: rgba(255, 253, 250, 0.14);
+  color: var(--white);
+}
+
+.offers .plan-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.4rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.offers .plan-price {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.6rem;
+  line-height: 1;
+  margin-bottom: 1.6rem;
+}
+
+.offers .plan-price span {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+}
+
+.offers .featured-plan .plan-price span {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.offers .plan-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-height: 128px;
+  margin-bottom: 1.8rem;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.offers .featured-plan ul {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.offers .subscribe-btn {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid var(--primary);
+  border-radius: 999px;
+  padding: 1rem 1.4rem;
+  background: var(--primary);
+  color: var(--white);
+  transition: 0.35s ease;
+}
+
+.offers .featured-plan .subscribe-btn {
+  border-color: var(--white);
+  background: var(--white);
+  color: var(--primary);
+}
+
+.offers .subscribe-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+.offers .subscription-form-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin: 0 8% 6rem;
+  padding: 4rem;
+  border-radius: 32px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.offers .form-copy h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  margin-bottom: 1.2rem;
+}
+
+.offers .form-copy p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+.offers .subscription-form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.offers .subscription-form label {
+  color: var(--primary);
+  font-size: 0.86rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.offers .subscription-form input,
+.offers .subscription-form select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 253, 250, 0.74);
+  color: var(--primary);
+  padding: 1rem 1.2rem;
+  font: inherit;
+  outline: none;
+  transition: 0.35s ease;
+}
+
+.offers .subscription-form input:focus,
+.offers .subscription-form select:focus {
+  border-color: var(--accent);
+  background: var(--white);
+}
+
+.offers .subscription-form button {
+  margin-top: 0.8rem;
+  border: none;
+  border-radius: 999px;
+  padding: 1rem 1.4rem;
+  background: var(--primary);
+  color: var(--white);
+  font: inherit;
+  cursor: pointer;
+  transition: 0.35s ease;
+}
+
+.offers .subscription-form button:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+}
+
 @media (max-width: 1100px) {
   .offers .offer-hero,
-  .offers .offer-feature {
+  .offers .offer-feature,
+  .offers .subscription-form-section {
     grid-template-columns: 1fr;
   }
 
   .offers .offer-grid,
-  .offers .footer-grid {
+  .offers .footer-grid,
+  .offers .plan-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -3036,7 +3233,8 @@ COFFEE SELECTION SECTION */
   }
 
   .offers .offer-hero,
-  .offers .offers-section {
+  .offers .offers-section,
+  .offers .subscription-section {
     padding-left: 6%;
     padding-right: 6%;
   }
@@ -3060,16 +3258,22 @@ COFFEE SELECTION SECTION */
   }
 
   .offers .offer-grid,
-  .offers .footer-grid {
+  .offers .footer-grid,
+  .offers .plan-grid {
     grid-template-columns: 1fr;
   }
 
-  .offers .offer-feature {
+  .offers .offer-feature,
+  .offers .subscription-form-section {
     margin-left: 6%;
     margin-right: 6%;
   }
 
   .offers .offer-feature > div {
+    padding: 3rem 2rem;
+  }
+
+  .offers .subscription-form-section {
     padding: 3rem 2rem;
   }
 
