@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Special Offers | The Cultured Bean</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+
+  <body class="offers">
+    <div class="grain"></div>
+
+    <header id="header">
+      <nav>
+        <a href="Home.html" class="logo">The Cultured Bean</a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="cs2.html">Coffee</a></li>
+          <li><a href="brewing3.html">Equipment</a></li>
+          <li><a href="eventWorkshopC.html">Events</a></li>
+          <li><a href="shpcc.html">Cart</a></li>
+          <li class="active"><a href="specialOffer.html">Offers</a></li>
+        </ul>
+
+        <div class="menu-btn" id="menuBtn">☰</div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="offer-hero">
+        <div class="offer-hero-content reveal">
+          <p class="eyebrow">Seasonal Offers</p>
+          <h1>Warm Deals For Slow Coffee Rituals.</h1>
+          <p>
+            Discover limited bundles, first-visit savings, and curated tasting
+            sets made for home brewers, cafe regulars, and gift-worthy coffee
+            moments.
+          </p>
+
+          <div class="offer-actions">
+            <a href="#offer-grid" class="btn btn-primary">View Offers</a>
+            <button class="btn btn-secondary" id="copyHeroCode">
+              Copy Code: BEAN15
+            </button>
+          </div>
+        </div>
+
+        <div class="offer-hero-image reveal">
+          <img
+            src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1400&auto=format&fit=crop"
+            alt="Coffee cups and beans"
+          />
+          <div class="offer-badge">
+            <span>15% Off</span>
+            First cup for new customers
+          </div>
+        </div>
+      </section>
+
+      <section class="offer-strip reveal">
+        <div>
+          <span>Use Code</span>
+          <strong>BEAN15</strong>
+        </div>
+        <p>
+          Save on your first order, weekend brewing bundles, and selected
+          reserve beans while seasonal stock lasts.
+        </p>
+        <button id="copyStripCode">Copy Coupon</button>
+      </section>
+
+      <section class="offers-section" id="offer-grid">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Current Specials</p>
+            <h2>Choose Your Coffee Moment.</h2>
+          </div>
+          <p>
+            Each offer keeps the same handcrafted feeling as the rest of the
+            cafe experience: calm, useful, and carefully presented.
+          </p>
+        </div>
+
+        <div class="offer-grid">
+          <article class="offer-card reveal">
+            <div class="offer-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop"
+                alt="Fresh coffee cup"
+              />
+              <span>New Guest</span>
+            </div>
+            <div class="offer-card-content">
+              <p class="offer-type">First Visit</p>
+              <h3>15% Off Your First Cup</h3>
+              <p>
+                A gentle welcome for anyone beginning their ritual with The
+                Cultured Bean.
+              </p>
+              <div class="offer-meta">
+                <strong>Code: BEAN15</strong>
+                <span>Ends Sunday</span>
+              </div>
+              <button
+                class="add-offer"
+                data-name="First Cup Offer"
+                data-price="4500"
+                data-category="Offer"
+                data-image="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop"
+              >
+                Add To Cart
+              </button>
+            </div>
+          </article>
+
+          <article class="offer-card reveal">
+            <div class="offer-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1200&auto=format&fit=crop"
+                alt="Coffee beans"
+              />
+              <span>Bundle</span>
+            </div>
+            <div class="offer-card-content">
+              <p class="offer-type">Home Brewing</p>
+              <h3>Reserve Bean Duo</h3>
+              <p>
+                Two rotating small-batch roasts for pour-over, espresso, and
+                slow weekend mornings.
+              </p>
+              <div class="offer-meta">
+                <strong>MMK 42,000</strong>
+                <span>Save MMK 8,000</span>
+              </div>
+              <button
+                class="add-offer"
+                data-name="Reserve Bean Duo"
+                data-price="42000"
+                data-category="Offer Bundle"
+                data-image="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1200&auto=format&fit=crop"
+              >
+                Add To Cart
+              </button>
+            </div>
+          </article>
+
+          <article class="offer-card reveal">
+            <div class="offer-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop"
+                alt="Coffee workshop"
+              />
+              <span>Workshop</span>
+            </div>
+            <div class="offer-card-content">
+              <p class="offer-type">Events</p>
+              <h3>Brewing Class Pair Pass</h3>
+              <p>
+                Bring a friend to a guided brewing session with tasting notes,
+                technique, and take-home recipes.
+              </p>
+              <div class="offer-meta">
+                <strong>MMK 58,000</strong>
+                <span>Two seats</span>
+              </div>
+              <button
+                class="add-offer"
+                data-name="Brewing Class Pair Pass"
+                data-price="58000"
+                data-category="Workshop Offer"
+                data-image="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop"
+              >
+                Add To Cart
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="offer-feature reveal">
+        <div>
+          <p class="eyebrow">Gift Ritual</p>
+          <h2>Build A Thoughtful Coffee Gift.</h2>
+          <p>
+            Pair a seasonal roast with brewing tools and a tasting card. We will
+            prepare it as a warm, ready-to-share coffee gift.
+          </p>
+          <a href="cs2.html" class="btn btn-primary">Shop Coffee</a>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?q=80&w=1400&auto=format&fit=crop"
+          alt="Coffee gift setting"
+        />
+      </section>
+    </main>
+
+    <div class="offer-toast" id="offerToast">Offer added to cart</div>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>The Cultured Bean</h3>
+          <p>
+            A neo-minimal coffee house built around tradition, warmth, and
+            authentic connection.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="eyebrow">Navigation</h4>
+          <div class="footer-links">
+            <a href="Home.html">Home</a>
+            <a href="cs2.html">Coffee</a>
+            <a href="brewing3.html">Equipment</a>
+            <a href="eventWorkshopC.html">Events</a>
+          </div>
+        </div>
+
+        <div class="footer-contact">
+          <h4 class="eyebrow">Visit Us</h4>
+          <p>128 Heritage Lane</p>
+          <p>Open Daily - 7am to 9pm</p>
+          <p>hello@culturedbean.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Cultured Bean</p>
+        <p>Crafted With Warmth & Tradition</p>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.getElementById("header");
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+      const toast = document.getElementById("offerToast");
+
+      window.addEventListener("scroll", () => {
+        header.classList.toggle("scrolled", window.scrollY > 50);
+      });
+
+      menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      const revealItems = document.querySelectorAll(".reveal");
+
+      const revealOnScroll = () => {
+        revealItems.forEach((item) => {
+          if (item.getBoundingClientRect().top < window.innerHeight - 120) {
+            item.classList.add("active");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 1600);
+      }
+
+      function copyCode() {
+        if (!navigator.clipboard) {
+          showToast("Coupon code: BEAN15");
+          return;
+        }
+
+        navigator.clipboard.writeText("BEAN15").then(
+          () => showToast("Coupon code BEAN15 copied"),
+          () => showToast("Coupon code: BEAN15"),
+        );
+      }
+
+      document.getElementById("copyHeroCode").addEventListener("click", copyCode);
+      document.getElementById("copyStripCode").addEventListener("click", copyCode);
+
+      document.querySelectorAll(".add-offer").forEach((button) => {
+        button.addEventListener("click", () => {
+          const product = {
+            name: button.dataset.name,
+            image: button.dataset.image,
+            price: Number(button.dataset.price),
+            category: button.dataset.category,
+            origin: button.dataset.category,
+            quantity: 1,
+          };
+
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const existingItem = cart.find((item) => item.name === product.name);
+
+          if (existingItem) {
+            existingItem.quantity += 1;
+          } else {
+            cart.push(product);
+          }
+
+          localStorage.setItem("cart", JSON.stringify(cart));
+          button.textContent = "Added";
+          button.classList.add("added");
+          showToast(`${product.name} added to cart`);
+
+          setTimeout(() => {
+            button.textContent = "Add To Cart";
+            button.classList.remove("added");
+          }, 1400);
+        });
+      });
+    </script>
+  </body>
+</html>

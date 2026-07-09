@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event and work shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- Swiper Plugin -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="style2.css" />
+
+    <style></style>
+  </head>
+  <body class="wkshop">
+    <!-- MODAL -->
+    <div class="modal" id="welcomeModal">
+      <div class="modal-content">
+        <img
+          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1400&auto=format&fit=crop"
+          alt="Coffee"
+        />
+        <div class="modal-info">
+          <span class="close-modal" id="closeModal">&times;</span>
+          <p class="eyebrow">First Visit</p>
+          <h2>Enjoy 15% Off Your First Cup.</h2>
+          <p>
+            Join our coffee circle for seasonal blends, curated brewing rituals,
+            and exclusive member gatherings.
+          </p>
+          <input type="email" placeholder="Enter your email" />
+          <button>Claim My Discount</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <header id="header">
+      <nav>
+        <a href="#" class="logo">The Cultured Bean</a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="Home.html">Home</a></li>
+
+          <li><a href="cs2.html">Coffee</a></li>
+
+          <li><a href="brewing3.html">Equipment</a></li>
+
+          <li><a href="eventWorkshopC.html">Events</a></li>
+          <li><a href="shpcc.html">Cart</a></li>
+
+          <li><a href="specialOffer.html">Offers</a></li>
+        </ul>
+
+        <div class="menu-btn" id="menuBtn">☰</div>
+      </nav>
+    </header>
+
+    <!-- EVENTS & WORKSHOPS -->
+    <section class="reveal" id="events">
+      <p class="eyebrow">Events & Workshops</p>
+      <h2 class="section-title">Gather Around Coffee, Craft & Conversation.</h2>
+      <p class="section-description">
+        Explore immersive coffee experiences designed for passionate coffee
+        lovers — from guided tasting rituals to intimate brewing workshops and
+        conversations with master roasters.
+      </p>
+
+      <div class="experience-grid" style="margin-bottom: 4rem">
+        <div class="experience-card">
+          <img
+            src="https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1200&auto=format&fit=crop"
+            alt="Coffee Tasting"
+          />
+          <div class="experience-card-content">
+            <h4>Seasonal Coffee Tasting</h4>
+            <p>
+              Experience curated tasting flights exploring rare single-origin
+              beans and flavour profiles from around the world.
+            </p>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop"
+            alt="Brewing Workshop"
+          />
+          <div class="experience-card-content">
+            <h4>Slow Brewing Workshop</h4>
+            <p>
+              Learn refined pour-over and brewing techniques guided by
+              experienced baristas in a calm intimate environment.
+            </p>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <img
+            src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?q=80&w=1200&auto=format&fit=crop"
+            alt="Meet Roaster"
+          />
+          <div class="experience-card-content">
+            <h4>Meet The Roaster</h4>
+            <p>
+              An evening of storytelling, roasting insights, and thoughtful
+              conversations with our featured coffee roasters.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          background: rgba(255, 255, 255, 0.72);
+          border: 1px solid var(--border);
+          border-radius: 32px;
+          overflow: hidden;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          box-shadow: var(--shadow);
+        "
+      >
+        <div style="padding: 4rem">
+          <p class="eyebrow">Reserve Your Seat</p>
+          <h2
+            class="section-title"
+            style="font-size: clamp(2.5rem, 4vw, 4rem); margin-bottom: 1rem"
+          >
+            Register For Upcoming Gatherings.
+          </h2>
+          <p class="section-description" style="margin-bottom: 2rem">
+            Sign up for our upcoming workshops and coffee rituals. Spaces are
+            intentionally limited to preserve an intimate atmosphere.
+          </p>
+
+          <form
+            action="mailto:hello@culturedbean.com"
+            method="post"
+            enctype="text/plain"
+            style="display: flex; flex-direction: column; gap: 1rem"
+          >
+            <input
+              type="text"
+              name="First Name"
+              placeholder="First Name"
+              required
+              style="
+                padding: 1rem 1.2rem;
+                border-radius: 999px;
+                border: 1px solid var(--border);
+                background: transparent;
+                outline: none;
+              "
+            />
+
+            <input
+              type="text"
+              name="Last Name"
+              placeholder="Last Name"
+              required
+              style="
+                padding: 1rem 1.2rem;
+                border-radius: 999px;
+                border: 1px solid var(--border);
+                background: transparent;
+                outline: none;
+              "
+            />
+
+            <input
+              type="email"
+              name="Email"
+              placeholder="Email Address"
+              required
+              style="
+                padding: 1rem 1.2rem;
+                border-radius: 999px;
+                border: 1px solid var(--border);
+                background: transparent;
+                outline: none;
+              "
+            />
+
+            <button
+              type="submit"
+              style="
+                padding: 1rem;
+                border: none;
+                border-radius: 999px;
+                background: var(--primary);
+                color: #fff;
+                cursor: pointer;
+                transition: 0.35s ease;
+              "
+            >
+              Register Now
+            </button>
+          </form>
+        </div>
+
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=1400&auto=format&fit=crop"
+            alt="Coffee Workshop"
+            style="height: 100%; min-height: 620px; object-fit: cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter reveal" id="newsletter">
+      <div class="newsletter-content">
+        <p class="eyebrow">Join Our Circle</p>
+        <h2>Stay Close To The Ritual.</h2>
+        <p>
+          Receive curated coffee recommendations, event invitations, and stories
+          from the world of specialty coffee.
+        </p>
+
+        <form>
+          <input type="email" placeholder="Your email address" />
+          <button type="submit">Join Community</button>
+        </form>
+      </div>
+
+      <img
+        src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?q=80&w=1400&auto=format&fit=crop"
+        alt="Coffee Community"
+      />
+    </section>
+
+    <section class="contact-section">
+      <!-- Google Map -->
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d8928.746441598356!2d96.08744398678967!3d21.952865218166803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2smm!4v1780373401690!5m2!1sen!2smm"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+
+      <!-- Visit Us -->
+
+      <div class="visit-us">
+        <h2>Visit Us</h2>
+
+        <p class="description">
+          We'd love to welcome you. Visit our office or contact us using the
+          information below.
+        </p>
+
+        <div class="info">
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+
+            No. 123, Main Road, Mandalay, Myanmar
+          </p>
+
+          <p>
+            <i class="fa-solid fa-phone"></i>
+
+            +95 123 456 789
+          </p>
+
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+
+            info@example.com
+          </p>
+
+          <p>
+            <i class="fa-solid fa-clock"></i>
+
+            Mon - Fri: 9:00 AM - 5:00 PM
+          </p>
+        </div>
+
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>The Cultured Bean</h3>
+          <p>
+            A neo-minimal coffee house built around tradition, warmth, and
+            authentic connection.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="eyebrow">Navigation</h4>
+          <div class="footer-links">
+            <a href="#story">Story</a>
+            <a href="#featured">Featured</a>
+            <a href="#experience">Experience</a>
+            <a href="#newsletter">Community</a>
+          </div>
+        </div>
+
+        <div class="footer-contact">
+          <h4 class="eyebrow">Visit Us</h4>
+          <p>128 Heritage Lane</p>
+          <p>Open Daily • 7am — 9pm</p>
+          <p>hello@culturedbean.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 The Cultured Bean</p>
+        <p>Crafted With Warmth & Tradition</p>
+      </div>
+    </footer>
+
+    <!-- SWIPER JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      // NAVBAR SCROLL EFFECT
+      const header = document.getElementById("header");
+
+      window.addEventListener("scroll", () => {
+        header.classList.toggle("scrolled", window.scrollY > 50);
+      });
+
+      // MOBILE NAVIGATION
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      // SWIPER PLUGIN
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 3500,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+        },
+      });
+
+      // REVEAL ANIMATION
+      const reveals = document.querySelectorAll(".reveal");
+
+      const revealOnScroll = () => {
+        reveals.forEach((reveal) => {
+          const windowHeight = window.innerHeight;
+          const revealTop = reveal.getBoundingClientRect().top;
+          const revealPoint = 120;
+
+          if (revealTop < windowHeight - revealPoint) {
+            reveal.classList.add("active");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+
+      // MODAL
+      const modal = document.getElementById("welcomeModal");
+      const closeModal = document.getElementById("closeModal");
+
+      window.addEventListener("load", () => {
+        if (!sessionStorage.getItem("modalShown")) {
+          setTimeout(() => {
+            modal.classList.add("active");
+            sessionStorage.setItem("modalShown", "true");
+          }, 1200);
+        }
+      });
+
+      closeModal.addEventListener("click", () => {
+        modal.classList.remove("active");
+      });
+
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

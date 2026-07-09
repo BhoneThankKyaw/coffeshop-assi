@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Cultured Bean</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Swiper Plugin -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body class="home">
+    <!-- MODAL -->
+    <div class="modal" id="welcomeModal">
+      <div class="modal-content">
+        <img
+          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1400&auto=format&fit=crop"
+          alt="Coffee"
+        />
+        <div class="modal-info">
+          <span class="close-modal" id="closeModal">&times;</span>
+          <p class="eyebrow">First Visit</p>
+          <h2>Enjoy 15% Off Your First Cup.</h2>
+          <p>
+            Join our coffee circle for seasonal blends, curated brewing rituals,
+            and exclusive member gatherings.
+          </p>
+          <input type="email" placeholder="Enter your email" />
+          <button>Claim My Discount</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <header id="header">
+      <nav>
+        <a href="#" class="logo">The Cultured Bean</a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="Home.html">Home</a></li>
+
+          <li><a href="cs2.html">Coffee</a></li>
+
+          <li><a href="brewing3.html">Equipment</a></li>
+
+          <li><a href="eventWorkshopC.html">Events</a></li>
+          <li><a href="shpcc.html">Cart</a></li>
+
+          <li><a href="specialOffer.html">Offers</a></li>
+        </ul>
+
+        <div class="menu-btn" id="menuBtn">☰</div>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Tradition • Warmth • Ritual</p>
+        <h1 class="hero-title">Coffee For Those Who Truly Live It.</h1>
+        <p class="hero-copy">
+          Rooted in tradition and crafted with intention, The Cultured Bean
+          celebrates the quiet rituals of coffee through carefully sourced
+          beans, slow brewing methods, and meaningful gatherings.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#featured" class="btn btn-primary">Explore Featured</a>
+          <a href="#story" class="btn btn-secondary">Our Story</a>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1400&auto=format&fit=crop"
+          alt="Coffee Shop"
+        />
+
+        <div class="floating-card">
+          <h4>Slow Crafted.</h4>
+          <p>
+            Hand-brewed coffee rooted in heritage, atmosphere, and honest
+            connection.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="story reveal" id="story">
+      <div class="story-images">
+        <img
+          src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200&auto=format&fit=crop"
+          alt="Beans"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop"
+          alt="Brewing"
+        />
+      </div>
+
+      <div>
+        <p class="eyebrow">A Cultured Ritual</p>
+        <h2 class="section-title">
+          A Space Built Around The Warmth Of Coffee.
+        </h2>
+        <p class="section-description">
+          Inspired by timeless coffee houses and slow living traditions, our
+          café brings together craftsmanship, authentic conversation, and the
+          rich aroma of freshly roasted beans. Every detail is designed to feel
+          intimate, grounded, and deeply human.
+        </p>
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="featured reveal" id="featured">
+      <p class="eyebrow">Featured Moments</p>
+      <h2 class="section-title">Seasonal Brews & Community Gatherings.</h2>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="slide-image">
+              <img
+                src="https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1200&auto=format&fit=crop"
+                alt="Espresso"
+              />
+            </div>
+            <div class="slide-content">
+              <h3>Single Origin Espresso</h3>
+              <p>
+                Balanced notes of cacao, roasted walnut, and caramelised
+                sweetness sourced from small family farms.
+              </p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="slide-image">
+              <img
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop"
+                alt="Workshop"
+              />
+            </div>
+            <div class="slide-content">
+              <h3>Weekend Brewing Rituals</h3>
+              <p>
+                Immersive coffee workshops exploring pour-over techniques and
+                mindful brewing traditions.
+              </p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="slide-image">
+              <img
+                src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1200&auto=format&fit=crop"
+                alt="Beans"
+              />
+            </div>
+            <div class="slide-content">
+              <h3>Reserve Roasted Beans</h3>
+              <p>
+                Small-batch roasted beans crafted for those who appreciate
+                depth, ritual, and authenticity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="reveal" id="experience">
+      <p class="eyebrow">The Experience</p>
+      <h2 class="section-title">Designed For Everyday Coffee Lovers.</h2>
+
+      <div class="experience-grid">
+        <div class="experience-card">
+          <img
+            src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?q=80&w=1200&auto=format&fit=crop"
+            alt="Coffee Beans"
+          />
+          <div class="experience-card-content">
+            <h4>Authentic Sourcing</h4>
+            <p>
+              We partner with ethical growers and celebrate traditional roasting
+              techniques rooted in heritage.
+            </p>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <img
+            src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=1200&auto=format&fit=crop"
+            alt="Cafe"
+          />
+          <div class="experience-card-content">
+            <h4>Warm Community</h4>
+            <p>
+              A calm and welcoming space where meaningful conversations happen
+              over slow crafted coffee.
+            </p>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop"
+            alt="Brew"
+          />
+          <div class="experience-card-content">
+            <h4>Brewing Rituals</h4>
+            <p>
+              From pour-over to espresso, every cup is prepared with patience,
+              care, and precision.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter reveal" id="newsletter">
+      <div class="newsletter-content">
+        <p class="eyebrow">Join Our Circle</p>
+        <h2>Stay Close To The Ritual.</h2>
+        <p>
+          Receive curated coffee recommendations, event invitations, and stories
+          from the world of specialty coffee.
+        </p>
+
+        <form>
+          <input type="email" placeholder="Your email address" />
+          <button type="submit">Join Community</button>
+        </form>
+      </div>
+
+      <img
+        src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?q=80&w=1400&auto=format&fit=crop"
+        alt="Coffee Community"
+      />
+    </section>
+
+    <section class="contact-section">
+      <!-- Google Map -->
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d8928.746441598356!2d96.08744398678967!3d21.952865218166803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2smm!4v1780373401690!5m2!1sen!2smm"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+
+      <!-- Visit Us -->
+
+      <div class="visit-us">
+        <h2>Visit Us</h2>
+
+        <p class="description">
+          We'd love to welcome you. Visit our office or contact us using the
+          information below.
+        </p>
+
+        <div class="info">
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+
+            No. 123, Main Road, Mandalay, Myanmar
+          </p>
+
+          <p>
+            <i class="fa-solid fa-phone"></i>
+
+            +95 123 456 789
+          </p>
+
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+
+            info@example.com
+          </p>
+
+          <p>
+            <i class="fa-solid fa-clock"></i>
+
+            Mon - Fri: 9:00 AM - 5:00 PM
+          </p>
+        </div>
+
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>The Cultured Bean</h3>
+          <p>
+            A neo-minimal coffee house built around tradition, warmth, and
+            authentic connection.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="eyebrow">Navigation</h4>
+          <div class="footer-links">
+            <a href="#story">Story</a>
+            <a href="#featured">Featured</a>
+            <a href="#experience">Experience</a>
+            <a href="#newsletter">Community</a>
+          </div>
+        </div>
+
+        <div class="footer-contact">
+          <h4 class="eyebrow">Visit Us</h4>
+          <p>128 Heritage Lane</p>
+          <p>Open Daily • 7am — 9pm</p>
+          <p>hello@culturedbean.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 The Cultured Bean</p>
+        <p>Crafted With Warmth & Tradition</p>
+      </div>
+    </footer>
+
+    <!-- SWIPER JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      // NAVBAR SCROLL EFFECT
+      const header = document.getElementById("header");
+
+      window.addEventListener("scroll", () => {
+        header.classList.toggle("scrolled", window.scrollY > 50);
+      });
+
+      // MOBILE NAVIGATION
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+      const allnavlink = document.querySelectorAll(".nav-links li");
+
+      console.log(allnavlink.length);
+
+      menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      allnavlink.forEach((link) => {
+        link.addEventListener("click", () => {
+          allnavlink.forEach((item) => item.classList.remove("active"));
+
+          link.classList.add("active");
+        });
+      });
+
+      // SWIPER PLUGIN
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 3500,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+        },
+      });
+
+      // REVEAL ANIMATION
+      const reveals = document.querySelectorAll(".reveal");
+
+      const revealOnScroll = () => {
+        reveals.forEach((reveal) => {
+          const windowHeight = window.innerHeight;
+          const revealTop = reveal.getBoundingClientRect().top;
+          const revealPoint = 120;
+
+          if (revealTop < windowHeight - revealPoint) {
+            reveal.classList.add("active");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+
+      // MODAL
+      const modal = document.getElementById("welcomeModal");
+      const closeModal = document.getElementById("closeModal");
+
+      window.addEventListener("load", () => {
+        if (!sessionStorage.getItem("modalShown")) {
+          setTimeout(() => {
+            modal.classList.add("active");
+            sessionStorage.setItem("modalShown", "true");
+          }, 1200);
+        }
+      });
+
+      closeModal.addEventListener("click", () => {
+        modal.classList.remove("active");
+      });
+
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

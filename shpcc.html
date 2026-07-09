@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Shopping Cart | Heritage Coffee Collection</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body class="shpcc">
+    <div class="grain"></div>
+
+    <nav id="navbar">
+      <div class="nav-inner">
+        <div class="logo">Heritage Coffee</div>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="Home.html">Home</a></li>
+
+          <li><a href="cs2.html">Coffee</a></li>
+
+          <li><a href="brewing3.html">Equipment</a></li>
+
+          <li><a href="eventWorkshopC.html">Events</a></li>
+          <li><a href="specialOffer.html">Offers</a></li>
+        </ul>
+
+        <div class="cart-counter">Cart (<span id="cartCount">3</span>)</div>
+      </div>
+    </nav>
+
+    <section class="cart-section">
+      <div class="section-header reveal">
+        <div>
+          <div class="eyebrow">Current Selection</div>
+          <h2>Your Collection</h2>
+        </div>
+
+        <p>
+          Authentic coffees and brewing essentials curated for depth, ritual,
+          and craftsmanship.
+        </p>
+      </div>
+
+      <div class="cart-layout">
+        <div class="cart-items" id="cartItems"></div>
+
+        <aside class="summary reveal">
+          <h3>Order Summary</h3>
+
+          <div class="summary-row">
+            <span>Products</span>
+            <span>$108</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span>TBD</span>
+          </div>
+
+          <div class="summary-row total">
+            <strong>Total</strong>
+            <strong>$108</strong>
+          </div>
+
+          <button class="checkout">Proceed To Checkout</button>
+
+          <div class="notice">
+            Online transactions will be enabled in a future release. Your
+            selections are saved securely in your browser for future purchases.
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        Crafted for coffee enthusiasts who value heritage, ritual and
+        authenticity.
+      </div>
+
+      <div>© 2026 Heritage Coffee Collection</div>
+    </footer>
+
+    <script>
+      /* Navbar Scroll */
+
+      const nav = document.getElementById("navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 60) {
+          nav.classList.add("scrolled");
+        } else {
+          nav.classList.remove("scrolled");
+        }
+      });
+
+      /* Reveal Animation */
+
+      const reveals = document.querySelectorAll(".reveal");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        {
+          threshold: 0.15,
+        },
+      );
+
+      reveals.forEach((item) => {
+        observer.observe(item);
+      });
+
+      /* Local Storage Cart */
+
+      //local storage section
+
+      const cartItemsContainer = document.getElementById("cartItems");
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      console.log(cart);
+
+      function renderCart() {
+        cartItemsContainer.innerHTML = "";
+
+        let total = 0;
+        let itemCount = 0;
+
+        cart.forEach((item, index) => {
+          const itemTotal = item.price * item.quantity;
+
+          total += itemTotal;
+          itemCount += item.quantity;
+
+          cartItemsContainer.innerHTML += `
+      <div class="cart-item reveal">
+        <img src="${item.image}" alt="${item.name}" />
+
+        <div class="product-meta">
+          <small>${item.origin}</small>
+          <h3>${item.name}</h3>
+
+          <div class="quantity">
+            <button onclick="changeQty(${index}, -1)">-</button>
+            <span>${item.quantity}</span>
+            <button onclick="changeQty(${index}, 1)">+</button>
+          </div>
+        </div>
+
+        <div class="price">
+          <strong>${itemTotal}MMK</strong>
+          <div class="remove" onclick="removeItem(${index})">
+            Remove
+          </div>
+        </div>
+      </div>
+    `;
+        });
+
+        document.getElementById("cartCount").textContent = itemCount;
+
+        document.querySelector(".summary-row span:last-child").textContent =
+          `$${total}MMK`;
+
+        document.querySelector(".total strong:last-child").textContent =
+          `${total}MMK`;
+      }
+
+      function changeQty(index, change) {
+        cart[index].quantity += change;
+
+        if (cart[index].quantity <= 0) {
+          cart.splice(index, 1);
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderCart();
+      }
+
+      function removeItem(index) {
+        cart.splice(index, 1);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderCart();
+      }
+      renderCart();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brewing Equipment</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+
+  <body class="br">
+    <header>
+      <nav>
+        <div class="logo">Coffee House</div>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="Home.html">Home</a></li>
+
+          <li><a href="cs2.html">Coffee</a></li>
+
+          <li><a href="brewing3.html" class="active">Equipment</a></li>
+
+          <li><a href="eventWorkshopC.html">Events</a></li>
+          <li><a href="shpcc.html">Cart</a></li>
+
+          <li><a href="specialOffer.html">Offers</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="equipment-page">
+      <section class="top-area" data-aos="fade-up">
+        <span>Home Brewing Collection</span>
+        <h1>Brewing Equipment</h1>
+        <p>
+          Discover warm, simple and beautiful brewing tools for making
+          café-quality coffee at home.
+        </p>
+      </section>
+
+      <div class="search-wrap" data-aos="fade-up" data-aos-delay="150">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search brewing equipment..."
+        />
+      </div>
+
+      <div class="filter-buttons" data-aos="fade-up" data-aos-delay="250">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="brewer">Brewers</button>
+        <button class="filter-btn" data-filter="grinder">Grinders</button>
+        <button class="filter-btn" data-filter="tools">Tools</button>
+      </div>
+
+      <section class="equipment-grid" id="equipmentGrid"></section>
+    </main>
+
+    <div class="cart-box">
+      🛒
+      <span class="cart-count">0</span>
+    </div>
+
+    <div class="toast">Added to cart ✓</div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      // AOS
+      AOS.init({
+        duration: 900,
+        once: true,
+        offset: 80,
+      });
+
+      const equipment = [
+        {
+          name: "Pour Over Set",
+          category: "brewer",
+          tag: "Brewer",
+          price: 65000,
+          stars: "★★★★★",
+          description: "Perfect for clean, smooth and slow-brewed coffee.",
+          image:
+            "https://images.unsplash.com/photo-1517705008128-361805f42e86?w=900",
+        },
+        {
+          name: "French Press",
+          category: "brewer",
+          tag: "Brewer",
+          price: 78000,
+          stars: "★★★★☆",
+          description: "Creates rich coffee with bold and full flavor.",
+          image:
+            "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900",
+        },
+        {
+          name: "Manual Grinder",
+          category: "grinder",
+          tag: "Grinder",
+          price: 98000,
+          stars: "★★★★★",
+          description: "Grind fresh beans for better aroma and taste.",
+          image:
+            "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=900",
+        },
+        {
+          name: "Gooseneck Kettle",
+          category: "tools",
+          tag: "Tool",
+          price: 110000,
+          stars: "★★★★★",
+          description: "Control water flow for perfect pour-over brewing.",
+          image:
+            "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900",
+        },
+        {
+          name: "Coffee Scale",
+          category: "tools",
+          tag: "Tool",
+          price: 45000,
+          stars: "★★★★☆",
+          description: "Measure coffee and water accurately every time.",
+          image:
+            "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=900",
+        },
+        {
+          name: "Moka Pot",
+          category: "brewer",
+          tag: "Brewer",
+          price: 85000,
+          stars: "★★★★☆",
+          description: "Classic stovetop brewer for strong coffee flavor.",
+          image:
+            "https://images.unsplash.com/photo-1522992319-0365e5f11656?w=900",
+        },
+      ];
+
+      const equipmentGrid = document.getElementById("equipmentGrid");
+      equipmentGrid.innerHTML = equipment
+        .map(
+          (item) => `
+<div class="card" data-name="${item.name.toLowerCase()}" data-category="${item.category}" data-aos="fade-up">
+<div class="card-img"><img src="${item.image}" alt="${item.name}"></div>
+<div class="card-content">
+<span class="tag">${item.tag}</span>
+<h3>${item.name}</h3>
+<p>${item.description}</p>
+<div class="price-row">
+<span class="price">MMK ${item.price.toLocaleString()}</span>
+<span class="stars">${item.stars}</span>
+</div>
+<button class="add-btn">Add to Cart</button>
+</div></div>`,
+        )
+        .join("");
+
+      // ELEMENTS
+      const buttons = document.querySelectorAll(".add-btn");
+      const cartBox = document.querySelector(".cart-box");
+      const cartCountText = document.querySelector(".cart-count");
+      const toast = document.querySelector(".toast");
+
+      // LOAD CART COUNT FROM LOCAL STORAGE
+      let storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      let cartCount = storedCart.reduce(
+        (total, item) => total + item.quantity,
+        0,
+      );
+
+      cartCountText.textContent = cartCount;
+
+      // ADD TO CART
+      buttons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const card = this.closest(".card");
+          const img = card.querySelector("img");
+
+          // PRODUCT DATA
+          const product = {
+            name: card.querySelector("h3").textContent,
+            image: card.querySelector("img").src,
+            price: parseFloat(
+              card
+                .querySelector(".price")
+                .textContent.replace("MMK", "")
+                .replace(/,/g, ""),
+            ),
+            category: card.querySelector(".tag").textContent,
+            quantity: 1,
+          };
+
+          // GET CART
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+          const existingItem = cart.find((item) => item.name === product.name);
+
+          if (existingItem) {
+            existingItem.quantity += 1;
+          } else {
+            cart.push(product);
+          }
+
+          // SAVE CART
+          localStorage.setItem("cart", JSON.stringify(cart));
+
+          // FLYING IMAGE ANIMATION
+          const clone = img.cloneNode(true);
+
+          const imgRect = img.getBoundingClientRect();
+          const cartRect = cartBox.getBoundingClientRect();
+
+          clone.classList.add("flying-item");
+
+          clone.style.left = imgRect.left + "px";
+          clone.style.top = imgRect.top + "px";
+          clone.style.width = imgRect.width + "px";
+          clone.style.height = imgRect.height + "px";
+
+          document.body.appendChild(clone);
+
+          setTimeout(() => {
+            clone.style.left = cartRect.left + 20 + "px";
+            clone.style.top = cartRect.top + 20 + "px";
+            clone.style.width = "20px";
+            clone.style.height = "20px";
+            clone.style.opacity = "0";
+            clone.style.transform = "rotate(360deg)";
+          }, 50);
+
+          setTimeout(() => {
+            clone.remove();
+
+            cartCount++;
+
+            cartCountText.textContent = cartCount;
+
+            cartBox.classList.add("shake");
+            toast.classList.add("show");
+
+            setTimeout(() => {
+              cartBox.classList.remove("shake");
+              toast.classList.remove("show");
+            }, 900);
+          }, 900);
+
+          // BUTTON EFFECT
+          this.classList.add("success");
+          this.textContent = "✓ Added";
+
+          setTimeout(() => {
+            this.classList.remove("success");
+            this.textContent = "Add to Cart";
+          }, 1500);
+        });
+      });
+
+      // SEARCH + FILTER
+      const searchInput = document.getElementById("searchInput");
+      const cards = document.querySelectorAll(".card");
+      const filterButtons = document.querySelectorAll(".filter-btn");
+
+      searchInput.addEventListener("keyup", filterProducts);
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          filterButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+          filterProducts();
+        });
+      });
+
+      function filterProducts() {
+        const searchValue = searchInput.value.toLowerCase();
+
+        const activeFilter =
+          document.querySelector(".filter-btn.active").dataset.filter;
+
+        cards.forEach((card) => {
+          const name = card.dataset.name.toLowerCase();
+          const category = card.dataset.category;
+
+          const matchSearch = name.includes(searchValue);
+
+          const matchCategory =
+            activeFilter === "all" || category === activeFilter;
+
+          if (matchSearch && matchCategory) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

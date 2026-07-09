@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Selection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Swiper Plugin -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- AOS Plugin -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body class="cs">
+    <div class="grain"></div>
+
+    <!-- Floating Cart + Custom Notification -->
+    <a
+      href="shpcc.html"
+      class="cs-cart-box"
+      id="csCartBox"
+      aria-label="Open cart"
+    >
+      🛒
+      <span class="cs-cart-count" id="csCartCount">0</span>
+    </a>
+
+    <div class="cs-toast" id="csToast">
+      <div class="cs-toast-icon">✓</div>
+      <div>
+        <strong id="csToastTitle">Added to cart</strong>
+        <p id="csToastText">Your item is ready in the cart.</p>
+      </div>
+    </div>
+
+    <header id="header">
+      <nav>
+        <a href="#" class="logo">The Cultured Bean</a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="Home.html">Home</a></li>
+
+          <li><a href="cs2.html">Coffee</a></li>
+
+          <li><a href="brewing3.html" class="active">Equipment</a></li>
+
+          <li><a href="eventWorkshopC.html">Events</a></li>
+          <li><a href="shpcc.html">Cart</a></li>
+
+          <li><a href="specialOffer.html">Offers</a></li>
+        </ul>
+
+        <div class="menu-btn" id="menuBtn">☰</div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-grid">
+        <div data-aos="fade-right">
+          <div class="eyebrow">Curated Coffee Selection</div>
+          <h1>Quietly Bold Roasts For Serious Coffee Drinkers.</h1>
+          <p>
+            Explore rare single-origin coffees and layered house blends roasted
+            for clarity, depth, and texture. Built for espresso rituals, slow
+            mornings, and intentional brewing.
+          </p>
+
+          <div class="search-wrap">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search coffees, origins, tasting notes..."
+            />
+            <div class="animated-search" id="typingText"></div>
+          </div>
+        </div>
+
+        <div class="hero-image" data-aos="fade-left">
+          <img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop"
+            alt="Coffee brewing"
+          />
+
+          <div class="hero-card">
+            <span>Roasted Weekly</span>
+            Built around clean finishes, dark caramel body, and nuanced floral
+            acidity.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalogue">
+      <div class="section-heading" data-aos="fade-up">
+        <div>
+          <div class="eyebrow">Catalogue Selection</div>
+          <h2>Distinct Profiles.</h2>
+        </div>
+
+        <p>
+          Thoughtfully sourced coffees designed for pour-over, espresso, and
+          immersion brewing. Every roast highlights texture, aroma, and balance.
+        </p>
+      </div>
+
+      <div class="swiper coffeeSwiper" data-aos="fade-up">
+        <div class="swiper-wrapper" id="coffeeContainer"></div>
+      </div>
+    </section>
+
+    <section class="feature-section">
+      <div class="feature-grid">
+        <div class="feature-image" data-aos="fade-right">
+          <img
+            src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop"
+            alt="Coffee beans"
+          />
+        </div>
+
+        <div class="feature-content" data-aos="fade-left">
+          <div class="eyebrow">Featured Roast</div>
+          <h2>Built For Slow Extraction And Deep Flavor.</h2>
+
+          <p>
+            Our Midnight Archive blend is crafted with Brazilian and Guatemalan
+            beans to create a dense body with dark chocolate texture and subtle
+            dried fruit sweetness.
+          </p>
+
+          <p>
+            Roasted in small weekly batches for consistency and clarity. Ideal
+            for espresso, siphon brewing, and milk-based drinks.
+          </p>
+
+          <div class="details">
+            <div class="detail-box">
+              <small>Tasting Notes</small>
+              <strong>Dark Chocolate · Fig · Walnut</strong>
+            </div>
+
+            <div class="detail-box">
+              <small>Processing</small>
+              <strong>Natural & Washed Hybrid</strong>
+            </div>
+
+            <div class="detail-box">
+              <small>Roast Profile</small>
+              <strong>Medium Dark</strong>
+            </div>
+
+            <div class="detail-box">
+              <small>Recommended Brew</small>
+              <strong>Espresso / French Press</strong>
+            </div>
+          </div>
+          <div class="price">MMK 26,000</div>
+
+          <button class="add-cart">Add To Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        Crafted for coffee enthusiasts who value depth, texture, and intentional
+        roasting.
+      </div>
+      <div>© 2026 Quiet Roast Collection</div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 1200,
+        once: true,
+      });
+
+      // NAVBAR SCROLL EFFECT
+      const header = document.getElementById("header");
+
+      window.addEventListener("scroll", () => {
+        header.classList.toggle("scrolled", window.scrollY > 50);
+      });
+
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+      const allnavlink = document.querySelectorAll(".nav-links li");
+
+      console.log(allnavlink.length);
+
+      menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      allnavlink.forEach((link) => {
+        link.addEventListener("click", () => {
+          allnavlink.forEach((item) => item.classList.remove("active"));
+
+          link.classList.add("active");
+        });
+      });
+
+      // Coffee products array
+      const coffees = [
+        {
+          name: "Velvet Ember",
+          origin: "House Blend",
+          description:
+            "A layered espresso blend with deep cocoa body, roasted almond sweetness, and a smooth lingering finish.",
+          notes: ["Cocoa", "Roasted Almond", "Dark Cherry"],
+          brew: "Espresso / Moka Pot",
+          price: 22000,
+          displayPrice: "MMK 22,000",
+          image:
+            "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1200&auto=format&fit=crop",
+        },
+        {
+          name: "Ethiopian Bloom",
+          origin: "Single Origin · Ethiopia",
+          description:
+            "Bright floral aromatics layered with bergamot citrus and delicate honey sweetness. Crisp and tea-like in texture.",
+          notes: ["Jasmine", "Bergamot", "Honey"],
+          brew: "V60 / Chemex",
+          price: 24000,
+          displayPrice: "MMK 24,000",
+          image:
+            "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop",
+        },
+        {
+          name: "Sumatra Reserve",
+          origin: "Single Origin · Sumatra",
+          description:
+            "Dense body with earthy spice and molasses depth. Slow roasted to preserve smoky richness and velvet texture.",
+          notes: ["Molasses", "Cedar", "Black Spice"],
+          brew: "French Press",
+          price: 23000,
+          displayPrice: "MMK 23,000",
+          image:
+            "https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1200&auto=format&fit=crop",
+        },
+        {
+          name: "Golden Crest",
+          origin: "Signature Roast",
+          description:
+            "Balanced sweetness with soft caramel body and ripe stone fruit acidity. Designed for all-day drinking.",
+          notes: ["Caramel", "Apricot", "Brown Sugar"],
+          brew: "Espresso / Moka Pot",
+          price: 18000,
+          displayPrice: "MMK 18,000",
+          image:
+            "https://images.unsplash.com/photo-1459755486867-b55449bb39ff?q=80&w=1200&auto=format&fit=crop",
+        },
+      ];
+
+      const coffeeContainer = document.getElementById("coffeeContainer");
+
+      function renderCoffees(list) {
+        coffeeContainer.innerHTML = list
+          .map(
+            (coffee) => `
+              <div class="swiper-slide coffee-item">
+                <div class="coffee-card">
+                  <img src="${coffee.image}" alt="${coffee.name}" />
+
+                  <div class="card-content">
+                    <div class="origin">${coffee.origin}</div>
+                    <h3>${coffee.name}</h3>
+                    <p>${coffee.description}</p>
+
+                    <div class="notes">
+                      ${coffee.notes.map((note) => `<span>${note}</span>`).join("")}
+                    </div>
+
+                    <div class="price">${coffee.displayPrice}</div>
+
+                    <div class="card-footer">
+                      <div class="brew">Best Brew: ${coffee.brew}</div>
+                      <button class="add-cart" data-name="${coffee.name}">Add To Cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `,
+          )
+          .join("");
+      }
+
+      renderCoffees(coffees);
+
+      // Swiper Catalogue Plugin
+      const swiper = new Swiper(".coffeeSwiper", {
+        slidesPerView: 1.1,
+        spaceBetween: 24,
+        grabCursor: true,
+        observer: true,
+        observeParents: true,
+
+        breakpoints: {
+          0: {
+            slidesPerView: "auto",
+            spaceBetween: 16,
+            freeMode: true,
+          },
+          640: {
+            slidesPerView: 1.5,
+          },
+          900: {
+            slidesPerView: 2.2,
+          },
+          1200: {
+            slidesPerView: 3,
+          },
+        },
+      });
+
+      window.addEventListener("load", () => {
+        swiper.update();
+      });
+
+      // Animated Search Text
+      const words = [
+        "espresso blends",
+        "single-origin",
+        "floral acidity",
+        "dark chocolate notes",
+        "pour-over roast",
+      ];
+
+      let i = 0;
+      let j = 0;
+      let currentWord = "";
+      let isDeleting = false;
+      const typingText = document.getElementById("typingText");
+
+      function type() {
+        currentWord = words[i];
+
+        if (isDeleting) {
+          typingText.textContent = currentWord.substring(0, j--);
+        } else {
+          typingText.textContent = currentWord.substring(0, j++);
+        }
+
+        if (!isDeleting && j === currentWord.length + 1) {
+          isDeleting = true;
+          setTimeout(type, 1200);
+          return;
+        }
+
+        if (isDeleting && j === 0) {
+          isDeleting = false;
+          i = (i + 1) % words.length;
+        }
+
+        setTimeout(type, isDeleting ? 45 : 90);
+      }
+
+      type();
+
+      // Product Search Filter
+      const searchInput = document.getElementById("searchInput");
+
+      searchInput.addEventListener("keyup", () => {
+        const value = searchInput.value.toLowerCase();
+
+        const filteredCoffees = coffees.filter((coffee) => {
+          const text = `
+            ${coffee.name}
+            ${coffee.origin}
+            ${coffee.description}
+            ${coffee.notes.join(" ")}
+            ${coffee.brew}
+          `.toLowerCase();
+
+          return text.includes(value);
+        });
+
+        renderCoffees(filteredCoffees);
+        attachCartEvents();
+        swiper.update();
+      });
+
+      // Scroll Color Shift Effect
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        const body = document.body;
+
+        if (scrollY > 200) {
+          body.style.background = "#ede2d3";
+        } else {
+          body.style.background = "var(--bg)";
+        }
+      });
+
+      // ADD TO CART FUNCTIONALITY WITH ANIMATION + CUSTOM NOTIFICATION
+      let cartButtons = document.querySelectorAll(".add-cart");
+      const csCartBox = document.getElementById("csCartBox");
+      const csCartCount = document.getElementById("csCartCount");
+      const csToast = document.getElementById("csToast");
+      const csToastTitle = document.getElementById("csToastTitle");
+      const csToastText = document.getElementById("csToastText");
+      let toastTimer;
+
+      function getCartTotal() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        return cart.reduce((total, item) => total + (item.quantity || 1), 0);
+      }
+
+      function updateCartCount() {
+        csCartCount.textContent = getCartTotal();
+      }
+
+      function showToast(productName) {
+        clearTimeout(toastTimer);
+        csToastTitle.textContent = "Added to cart";
+        csToastText.textContent = `${productName} has been added successfully.`;
+        csToast.classList.add("show");
+
+        toastTimer = setTimeout(() => {
+          csToast.classList.remove("show");
+        }, 2600);
+      }
+
+      function flyToCart(card) {
+        const productImage =
+          card.querySelector("img") ||
+          document.querySelector(".feature-image img");
+        if (!productImage || !csCartBox) return;
+
+        const imageRect = productImage.getBoundingClientRect();
+        const cartRect = csCartBox.getBoundingClientRect();
+        const flyingImage = productImage.cloneNode(true);
+
+        flyingImage.classList.add("cs-flying-item");
+        flyingImage.style.left = imageRect.left + "px";
+        flyingImage.style.top = imageRect.top + "px";
+        flyingImage.style.width = imageRect.width + "px";
+        flyingImage.style.height = imageRect.height + "px";
+
+        document.body.appendChild(flyingImage);
+
+        requestAnimationFrame(() => {
+          flyingImage.style.left = cartRect.left + cartRect.width / 2 + "px";
+          flyingImage.style.top = cartRect.top + cartRect.height / 2 + "px";
+          flyingImage.style.width = "24px";
+          flyingImage.style.height = "24px";
+          flyingImage.style.opacity = "0.15";
+          flyingImage.style.transform =
+            "translate(-50%, -50%) scale(0.25) rotate(18deg)";
+        });
+
+        setTimeout(() => {
+          flyingImage.remove();
+          csCartBox.classList.add("shake");
+          setTimeout(() => csCartBox.classList.remove("shake"), 650);
+        }, 900);
+      }
+
+      updateCartCount();
+
+      function attachCartEvents() {
+        cartButtons = document.querySelectorAll(".add-cart");
+
+        cartButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const card =
+              button.closest(".coffee-card") ||
+              button.closest(".feature-content");
+
+            let product = {};
+
+            if (card.classList?.contains("feature-content")) {
+              product = {
+                name: "Midnight Archive",
+                origin: "Featured Roast",
+                notes: "Dark Chocolate, Fig, Walnut",
+                image:
+                  "https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop",
+                price: 26000,
+                quantity: 1,
+              };
+            } else {
+              const productName = button.dataset.name;
+              const selectedCoffee = coffees.find(
+                (coffee) => coffee.name === productName,
+              );
+
+              product = {
+                name: selectedCoffee.name,
+                origin: selectedCoffee.origin,
+                notes: selectedCoffee.notes.join(", "),
+                image: selectedCoffee.image,
+                price: selectedCoffee.price,
+                quantity: 1,
+              };
+            }
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const existingItem = cart.find(
+              (item) => item.name === product.name,
+            );
+
+            if (existingItem) {
+              existingItem.quantity += 1;
+            } else {
+              cart.push(product);
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+            flyToCart(card);
+            showToast(product.name);
+
+            button.classList.add("added");
+            button.textContent = "Added ✓";
+
+            setTimeout(() => {
+              button.classList.remove("added");
+              button.textContent = "Add To Cart";
+            }, 1200);
+          });
+        });
+      }
+
+      attachCartEvents();
+    </script>
+  </body>
+</html>
