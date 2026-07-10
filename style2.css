@@ -293,7 +293,8 @@ nav {
 
 .home .swiper {
   margin-top: 4rem;
-  overflow: visible;
+  overflow: hidden;
+  padding: 0.25rem 0.25rem 2rem;
 }
 
 .home .swiper-slide {
@@ -301,10 +302,15 @@ nav {
   border-radius: 28px;
   overflow: hidden;
   box-shadow: var(--shadow);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .home .slide-content {
   padding: 2rem;
+  flex: 1;
 }
 
 .home .slide-content h3 {
@@ -322,6 +328,7 @@ nav {
 .home .slide-image {
   height: 380px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .home .slide-image img {
@@ -743,11 +750,13 @@ nav {
   }
 
   .home nav,
+  .cs nav,
   .wkshop nav {
     padding: 1.4rem 6%;
   }
 
   .home .nav-links,
+  .cs .nav-links,
   .wkshop .nav-links {
     position: absolute;
     top: 100%;
@@ -764,6 +773,7 @@ nav {
   }
 
   .home .nav-links.active,
+  .cs .nav-links.active,
   .wkshop .nav-links.active {
     opacity: 1;
     pointer-events: auto;
@@ -771,6 +781,7 @@ nav {
   }
 
   .home .menu-btn,
+  .cs .menu-btn,
   .wkshop .menu-btn {
     display: block;
   }
@@ -815,6 +826,88 @@ nav {
   .home .modal-content img,
   .wkshop .modal-content img {
     display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .home .hero {
+    min-height: auto;
+    gap: 2rem;
+    padding: 7.5rem 6% 3rem;
+  }
+
+  .home .logo {
+    font-size: 1.65rem;
+  }
+
+  .home .hero-title {
+    font-size: 3.35rem;
+  }
+
+  .home .hero-copy {
+    line-height: 1.75;
+  }
+
+  .home .hero-actions {
+    flex-direction: column;
+  }
+
+  .home .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .home .hero-image-wrap {
+    height: 430px;
+    border-radius: 20px;
+  }
+
+  .home .floating-card {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    width: auto;
+  }
+
+  .home .story-images img:nth-child(1),
+  .home .story-images img:nth-child(2),
+  .home .slide-image,
+  .home .experience-card img {
+    height: 280px;
+  }
+
+  .home .swiper {
+    margin-top: 2.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .home .swiper-slide {
+    border-radius: 20px;
+  }
+
+  .home .slide-content {
+    padding: 1.4rem;
+  }
+
+  .home .slide-content h3 {
+    font-size: 1.65rem;
+  }
+
+  .home .newsletter {
+    grid-template-columns: 1fr;
+  }
+
+  .home .newsletter img {
+    min-height: 280px;
+  }
+
+  .home .newsletter form {
+    flex-direction: column;
+  }
+
+  .home .newsletter input,
+  .home .newsletter button {
+    width: 100%;
   }
 }
 
@@ -997,8 +1090,53 @@ COFFEE SELECTION SECTION */
 }
 
 .cs .swiper {
-  overflow: visible;
+  overflow: hidden;
   padding-bottom: 2rem;
+}
+
+.cs .coffeeSwiper {
+  padding-inline: 1px;
+}
+
+.cs .coffee-slider-arrow {
+  position: absolute;
+  top: 42%;
+  z-index: 5;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255, 253, 250, 0.9);
+  color: var(--brown);
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.cs .coffee-slider-arrow:hover {
+  background: var(--brown);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.cs .coffee-slider-prev {
+  left: 0.8rem;
+}
+
+.cs .coffee-slider-next {
+  right: 0.8rem;
+}
+
+.cs .coffee-slider-arrow.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.cs .coffee-item {
+  height: auto;
+  min-width: 0;
 }
 
 .cs .coffee-card {
@@ -1031,6 +1169,10 @@ COFFEE SELECTION SECTION */
 
 .cs .card-content {
   padding: 1.8rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .cs .origin {
@@ -1051,7 +1193,6 @@ COFFEE SELECTION SECTION */
 .cs .card-content p {
   color: var(--muted);
   margin-bottom: 1.5rem;
-  min-height: 90px;
 }
 
 .cs .notes {
@@ -1074,14 +1215,17 @@ COFFEE SELECTION SECTION */
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  margin-top: auto;
 }
 
 .cs .brew {
+  flex: 1;
   font-size: 0.9rem;
   color: var(--soft);
 }
 
 .cs .add-cart {
+  flex-shrink: 0;
   border: none;
   background: var(--brown);
   color: var(--white);
@@ -1316,6 +1460,27 @@ COFFEE SELECTION SECTION */
     grid-template-columns: 1fr;
     gap: 3rem;
   }
+
+  .cs .hero {
+    min-height: auto;
+    padding: 8rem 0 4rem;
+  }
+
+  .cs .hero-image img {
+    height: 560px;
+  }
+
+  .cs .hero-card {
+    left: 1.5rem;
+  }
+
+  .cs .feature-content {
+    padding-right: 0;
+  }
+
+  .cs .feature-image img {
+    height: 520px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1323,12 +1488,73 @@ COFFEE SELECTION SECTION */
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .cs section {
+    width: min(100% - 2rem, 1280px);
+  }
+
+  .cs h1 {
+    font-size: 4rem;
+  }
+
+  .cs .hero p {
+    font-size: 1rem;
+  }
+
+  .cs .catalogue {
+    padding: 5rem 0;
+  }
+
+  .cs .coffee-card img {
+    height: 300px;
+  }
+
+  .cs .coffee-slider-arrow {
+    top: 38%;
+    width: 42px;
+    height: 42px;
+  }
 }
 
 @media (max-width: 540px) {
+  .cs .logo {
+    font-size: 1.65rem;
+  }
+
+  .cs .hero {
+    padding-top: 7.5rem;
+  }
+
+  .cs h1 {
+    font-size: 3rem;
+  }
+
+  .cs .eyebrow {
+    letter-spacing: 0.16rem;
+  }
+
+  .cs .hero-image img,
+  .cs .feature-image img {
+    height: 360px;
+  }
+
+  .cs .hero-card {
+    position: static;
+    max-width: none;
+    margin-top: 1rem;
+  }
+
+  .cs .details {
+    grid-template-columns: 1fr;
+  }
+
   .cs .card-footer {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+  }
+
+  .cs .brew {
+    width: 100%;
   }
 
   .cs .add-cart {
@@ -1419,6 +1645,7 @@ COFFEE SELECTION SECTION */
 }
 
 @media (max-width: 768px) {
+  .home .contact-section,
   .wkshop .contact-section {
     flex-direction: column;
   }

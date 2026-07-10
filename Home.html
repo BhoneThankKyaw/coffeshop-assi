@@ -401,6 +401,8 @@
         slidesPerView: 1,
         spaceBetween: 30,
         loop: true,
+        observer: true,
+        observeParents: true,
         autoplay: {
           delay: 3500,
         },
@@ -409,6 +411,10 @@
             slidesPerView: 2,
           },
         },
+      });
+
+      window.addEventListener("load", () => {
+        swiper.update();
       });
 
       // REVEAL ANIMATION
