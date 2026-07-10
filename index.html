@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Cultured Bean</title>
+    <title>Bean Boutique</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,7 +18,6 @@
       referrerpolicy="no-referrer"
     />
 
-    sfoejalaosmdcsdf[aojsdsdjflafoijasfjojdajsoijlksjdfa;lzl;kjoicjalsffalksojojeraljsdicjojodfjosofasd]
     <!-- Swiper Plugin -->
     <link
       rel="stylesheet"
@@ -52,7 +51,7 @@
     <!-- HEADER -->
     <header id="header">
       <nav>
-        <a href="#" class="logo">The Cultured Bean</a>
+        <a href="#" class="logo">Bean Boutique</a>
 
         <ul class="nav-links" id="navLinks">
           <li class="active"><a href="Home.html">Home</a></li>
@@ -67,7 +66,16 @@
           <li><a href="offers.html">Offers</a></li>
         </ul>
 
-        <div class="menu-btn" id="menuBtn">☰</div>
+        <button
+          type="button"
+          class="menu-btn"
+          id="menuBtn"
+          aria-label="Open navigation"
+          aria-controls="navLinks"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
       </nav>
     </header>
 
@@ -77,7 +85,7 @@
         <p class="eyebrow">Tradition • Warmth • Ritual</p>
         <h1 class="hero-title">Coffee For Those Who Truly Live It.</h1>
         <p class="hero-copy">
-          Rooted in tradition and crafted with intention, The Cultured Bean
+          Rooted in tradition and crafted with intention, Bean Boutique
           celebrates the quiet rituals of coffee through carefully sourced
           beans, slow brewing methods, and meaningful gatherings.
         </p>
@@ -326,7 +334,7 @@
     <footer>
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>The Cultured Bean</h3>
+          <h3>Bean Boutique</h3>
           <p>
             A neo-minimal coffee house built around tradition, warmth, and
             authentic connection.
@@ -347,12 +355,12 @@
           <h4 class="eyebrow">Visit Us</h4>
           <p>128 Heritage Lane</p>
           <p>Open Daily • 7am — 9pm</p>
-          <p>hello@culturedbean.com</p>
+          <p>hello@beanboutique.com</p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 The Cultured Bean</p>
+        <p>© 2026 Bean Boutique</p>
         <p>Crafted With Warmth & Tradition</p>
       </div>
     </footer>
@@ -376,7 +384,8 @@
       console.log(allnavlink.length);
 
       menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+        const isOpen = navLinks.classList.toggle("active");
+        menuBtn.setAttribute("aria-expanded", isOpen);
       });
 
       allnavlink.forEach((link) => {

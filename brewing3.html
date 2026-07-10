@@ -19,7 +19,7 @@
   <body class="br">
     <header>
       <nav>
-        <div class="logo">Coffee House</div>
+        <div class="logo">Bean Boutique</div>
 
         <ul class="nav-links" id="navLinks">
           <li><a href="Home.html">Home</a></li>
@@ -29,9 +29,21 @@
           <li class="active"><a href="brewing3.html">Equipment</a></li>
 
           <li><a href="eventWorkshopC.html">Events</a></li>
+          <li><a href="shpcc.html">Cart</a></li>
 
           <li><a href="offers.html">Offers</a></li>
         </ul>
+
+        <button
+          type="button"
+          class="menu-btn"
+          id="menuBtn"
+          aria-label="Open navigation"
+          aria-controls="navLinks"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
       </nav>
     </header>
 
@@ -81,6 +93,14 @@
         offset: 80,
       });
 
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      menuBtn.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("active");
+        menuBtn.setAttribute("aria-expanded", isOpen);
+      });
+
       const equipment = [
         {
           name: "Pour Over Set",
@@ -89,6 +109,7 @@
           price: 65000,
           stars: "★★★★★",
           description: "Perfect for clean, smooth and slow-brewed coffee.",
+          tip: "Use medium-fine coffee, pour slowly in circles, and keep the water just off boil.",
           image:
             "https://images.unsplash.com/photo-1743677131349-0e4832394fec?q=80&w=900&auto=format&fit=crop",
         },
@@ -99,6 +120,7 @@
           price: 78000,
           stars: "★★★★☆",
           description: "Creates rich coffee with bold and full flavor.",
+          tip: "Use medium-coarse coffee, steep for four minutes, then press slowly.",
           image:
             "https://images.unsplash.com/photo-1639906512494-dd4a536abc4e?q=80&w=900&auto=format&fit=crop",
         },
@@ -109,6 +131,7 @@
           price: 98000,
           stars: "★★★★★",
           description: "Grind fresh beans for better aroma and taste.",
+          tip: "Set the burrs before adding beans, then grind only what you need for one brew.",
           image:
             "https://images.unsplash.com/photo-1646346834998-5b610ec21d12?q=80&w=900&auto=format&fit=crop",
         },
@@ -119,6 +142,7 @@
           price: 110000,
           stars: "★★★★★",
           description: "Control water flow for perfect pour-over brewing.",
+          tip: "Pour with a steady wrist and start from the center before moving outward.",
           image:
             "https://images.unsplash.com/photo-1592417766326-088bf3da80c5?q=80&w=900&auto=format&fit=crop",
         },
@@ -129,6 +153,7 @@
           price: 45000,
           stars: "★★★★☆",
           description: "Measure coffee and water accurately every time.",
+          tip: "Tare the scale before each step and use a 1:15 to 1:17 coffee-to-water ratio.",
           image:
             "https://images.unsplash.com/photo-1581446974083-41ed1a460587?q=80&w=900&auto=format&fit=crop",
         },
@@ -139,6 +164,7 @@
           price: 85000,
           stars: "★★★★☆",
           description: "Classic stovetop brewer for strong coffee flavor.",
+          tip: "Fill with hot water below the valve, use fine-medium coffee, and remove from heat when it gurgles.",
           image:
             "https://images.unsplash.com/photo-1528402041550-b16e40dd8b81?q=80&w=900&auto=format&fit=crop",
         },
@@ -154,6 +180,7 @@
 <span class="tag">${item.tag}</span>
 <h3>${item.name}</h3>
 <p>${item.description}</p>
+<p class="usage-tip">${item.tip}</p>
 <div class="price-row">
 <span class="price">MMK ${item.price.toLocaleString()}</span>
 <span class="stars">${item.stars}</span>

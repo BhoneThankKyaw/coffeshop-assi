@@ -46,7 +46,7 @@
 
     <header id="header">
       <nav>
-        <a href="#" class="logo">The Cultured Bean</a>
+        <a href="#" class="logo">Bean Boutique</a>
 
         <ul class="nav-links" id="navLinks">
           <li><a href="Home.html">Home</a></li>
@@ -61,7 +61,16 @@
           <li><a href="offers.html">Offers</a></li>
         </ul>
 
-        <div class="menu-btn" id="menuBtn">☰</div>
+        <button
+          type="button"
+          class="menu-btn"
+          id="menuBtn"
+          aria-label="Open navigation"
+          aria-controls="navLinks"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
       </nav>
     </header>
 
@@ -205,7 +214,8 @@
       console.log(allnavlink.length);
 
       menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+        const isOpen = navLinks.classList.toggle("active");
+        menuBtn.setAttribute("aria-expanded", isOpen);
       });
 
       allnavlink.forEach((link) => {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Special Offers | The Cultured Bean</title>
+    <title>Special Offers | Bean Boutique</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +20,7 @@
 
     <header id="header">
       <nav>
-        <a href="Home.html" class="logo">The Cultured Bean</a>
+        <a href="Home.html" class="logo">Bean Boutique</a>
 
         <ul class="nav-links" id="navLinks">
           <li><a href="Home.html">Home</a></li>
@@ -31,7 +31,16 @@
           <li class="active"><a href="specialOffer.html">Offers</a></li>
         </ul>
 
-        <div class="menu-btn" id="menuBtn">☰</div>
+        <button
+          type="button"
+          class="menu-btn"
+          id="menuBtn"
+          aria-label="Open navigation"
+          aria-controls="navLinks"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
       </nav>
     </header>
 
@@ -104,7 +113,7 @@
               <h3>15% Off Your First Cup</h3>
               <p>
                 A gentle welcome for anyone beginning their ritual with The
-                Cultured Bean.
+                Bean Boutique.
               </p>
               <div class="offer-meta">
                 <strong>Code: BEAN15</strong>
@@ -208,7 +217,7 @@
     <footer>
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>The Cultured Bean</h3>
+          <h3>Bean Boutique</h3>
           <p>
             A neo-minimal coffee house built around tradition, warmth, and
             authentic connection.
@@ -229,12 +238,12 @@
           <h4 class="eyebrow">Visit Us</h4>
           <p>128 Heritage Lane</p>
           <p>Open Daily - 7am to 9pm</p>
-          <p>hello@culturedbean.com</p>
+          <p>hello@beanboutique.com</p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 The Cultured Bean</p>
+        <p>&copy; 2026 Bean Boutique</p>
         <p>Crafted With Warmth & Tradition</p>
       </div>
     </footer>
@@ -250,7 +259,8 @@
       });
 
       menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+        const isOpen = navLinks.classList.toggle("active");
+        menuBtn.setAttribute("aria-expanded", isOpen);
       });
 
       const revealItems = document.querySelectorAll(".reveal");
