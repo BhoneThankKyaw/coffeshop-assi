@@ -49,7 +49,7 @@
     <!-- HEADER -->
     <header id="header">
       <nav>
-        <a href="#" class="logo">The Cultured Bean</a>
+        <a href="#" class="logo">Bean Boutique</a>
 
         <ul class="nav-links" id="navLinks">
           <li><a href="Home.html">Home</a></li>
@@ -64,7 +64,16 @@
           <li><a href="offers.html">Offers</a></li>
         </ul>
 
-        <div class="menu-btn" id="menuBtn">☰</div>
+        <button
+          type="button"
+          class="menu-btn"
+          id="menuBtn"
+          aria-label="Open navigation"
+          aria-controls="navLinks"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
       </nav>
     </header>
 
@@ -134,27 +143,33 @@
           </p>
 
           <form
-            action="mailto:hello@culturedbean.com"
+            action="mailto:hello@beanboutique.com"
             method="post"
             enctype="text/plain"
             class="register-form"
           >
+            <label for="registrationFirstName">First Name</label>
             <input
               type="text"
+              id="registrationFirstName"
               name="First Name"
               placeholder="First Name"
               required
             />
 
+            <label for="registrationLastName">Last Name</label>
             <input
               type="text"
+              id="registrationLastName"
               name="Last Name"
               placeholder="Last Name"
               required
             />
 
+            <label for="registrationEmail">Email Address</label>
             <input
               type="email"
+              id="registrationEmail"
               name="Email"
               placeholder="Email Address"
               required
@@ -261,7 +276,7 @@
     <footer>
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>The Cultured Bean</h3>
+          <h3>Bean Boutique</h3>
           <p>
             A neo-minimal coffee house built around tradition, warmth, and
             authentic connection.
@@ -282,12 +297,12 @@
           <h4 class="eyebrow">Visit Us</h4>
           <p>128 Heritage Lane</p>
           <p>Open Daily • 7am — 9pm</p>
-          <p>hello@culturedbean.com</p>
+          <p>hello@beanboutique.com</p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 The Cultured Bean</p>
+        <p>© 2026 Bean Boutique</p>
         <p>Crafted With Warmth & Tradition</p>
       </div>
     </footer>
@@ -308,7 +323,8 @@
       const navLinks = document.getElementById("navLinks");
 
       menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+        const isOpen = navLinks.classList.toggle("active");
+        menuBtn.setAttribute("aria-expanded", isOpen);
       });
 
       // SWIPER PLUGIN

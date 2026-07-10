@@ -31,7 +31,14 @@
           <li class="active"><a href="offers.html">Offers</a></li>
         </ul>
 
-        <button class="menu-btn" id="menuBtn" aria-label="Open navigation">
+        <button
+          type="button"
+          class="menu-btn"
+          id="menuBtn"
+          aria-label="Open navigation"
+          aria-controls="navLinks"
+          aria-expanded="false"
+        >
           ☰
         </button>
       </nav>
@@ -286,7 +293,8 @@
       });
 
       menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+        const isOpen = navLinks.classList.toggle("active");
+        menuBtn.setAttribute("aria-expanded", isOpen);
       });
 
       const revealItems = document.querySelectorAll(".reveal");

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Shopping Cart | Heritage Coffee Collection</title>
+    <title>Shopping Cart | Bean Boutique</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap"
@@ -18,7 +18,7 @@
 
     <nav id="navbar">
       <div class="nav-inner">
-        <div class="logo">Heritage Coffee</div>
+        <div class="logo">Bean Boutique</div>
 
         <ul class="nav-links" id="navLinks">
           <li><a href="Home.html">Home</a></li>
@@ -32,7 +32,18 @@
           <li><a href="offers.html">Offers</a></li>
         </ul>
 
-        <div class="cart-counter">Cart (<span id="cartCount">3</span>)</div>
+        <div class="cart-counter">Cart (<span id="cartCount">0</span>)</div>
+
+        <button
+          type="button"
+          class="menu-btn"
+          id="menuBtn"
+          aria-label="Open navigation"
+          aria-controls="navLinks"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
       </div>
     </nav>
 
@@ -57,7 +68,7 @@
 
           <div class="summary-row">
             <span>Products</span>
-            <span>$108</span>
+            <span>0 MMK</span>
           </div>
 
           <div class="summary-row">
@@ -67,7 +78,7 @@
 
           <div class="summary-row total">
             <strong>Total</strong>
-            <strong>$108</strong>
+            <strong>0 MMK</strong>
           </div>
 
           <button class="checkout">Proceed To Checkout</button>
@@ -86,13 +97,15 @@
         authenticity.
       </div>
 
-      <div>© 2026 Heritage Coffee Collection</div>
+      <div>© 2026 Bean Boutique</div>
     </footer>
 
     <script>
       /* Navbar Scroll */
 
       const nav = document.getElementById("navbar");
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
 
       window.addEventListener("scroll", () => {
         if (window.scrollY > 60) {
@@ -100,6 +113,11 @@
         } else {
           nav.classList.remove("scrolled");
         }
+      });
+
+      menuBtn.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("active");
+        menuBtn.setAttribute("aria-expanded", isOpen);
       });
 
       /* Reveal Animation */
@@ -139,6 +157,12 @@
         let total = 0;
         let itemCount = 0;
 
+        if (cart.length === 0) {
+          cartItemsContainer.innerHTML = `
+            <p class="empty-cart">Your cart is currently empty.</p>
+          `;
+        }
+
         cart.forEach((item, index) => {
           const itemTotal = item.price * item.quantity;
 
@@ -173,7 +197,7 @@
         document.getElementById("cartCount").textContent = itemCount;
 
         document.querySelector(".summary-row span:last-child").textContent =
-          `$${total}MMK`;
+          `${total}MMK`;
 
         document.querySelector(".total strong:last-child").textContent =
           `${total}MMK`;
