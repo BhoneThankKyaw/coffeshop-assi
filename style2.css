@@ -1,19 +1,16 @@
 :root {
   --bg: #f2ebe2;
-
   --surface: #ebe2d6;
-  --brown: #2f1d14;
-  --soft: #74604f;
-  --accent: #94765f;
-
-  --line: rgba(47, 29, 20, 0.12);
-  --white: #fffdfa;
-  --shadow: 0 25px 60px rgba(42, 24, 15, 0.08);
   --brown: #352117;
   --soft: #725847;
   --accent: #9a7a61;
   --line: rgba(53, 33, 23, 0.14);
+  --border: var(--line);
+  --primary: var(--brown);
+  --muted: var(--soft);
+  --text: var(--brown);
   --white: #fffdfa;
+  --shadow: 0 25px 60px rgba(42, 24, 15, 0.08);
   --transition: 0.45s ease;
 }
 
@@ -25,7 +22,8 @@
 }
 
 .home,
-.cs {
+.cs,
+.wkshop {
   font-family: "Inter", sans-serif;
   background: var(--bg);
   color: var(--text);
@@ -44,11 +42,13 @@ a {
   color: inherit;
 }
 
-.home section {
+.home section,
+.wkshop section {
   padding: 6rem 8%;
 }
 
-.home .section-title {
+.home .section-title,
+.wkshop .section-title {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   line-height: 0.95;
@@ -58,7 +58,8 @@ a {
   max-width: 700px;
 }
 
-.home .section-description {
+.home .section-description,
+.wkshop .section-description {
   color: var(--muted);
   line-height: 1.8;
   max-width: 650px;
@@ -188,24 +189,24 @@ nav {
 .home .btn {
   padding: 1rem 1.8rem;
   border-radius: 999px;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--accent);
   transition: 0.35s ease;
   cursor: pointer;
   font-size: 0.95rem;
 }
 
 .home .btn-primary {
-  background: var(--primary);
+  background: var(--accent);
   color: #fff;
 }
 
 .home .btn-primary:hover {
   background: transparent;
-  color: var(--primary);
+  color: var(--brown);
 }
 
 .home .btn-secondary:hover {
-  background: var(--primary);
+  background: var(--accent);
   color: #fff;
 }
 
@@ -330,14 +331,16 @@ nav {
 
 /* EXPERIENCE */
 
-.home .experience-grid {
+.home .experience-grid,
+.wkshop .experience-grid {
   margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-.home .experience-card {
+.home .experience-card,
+.wkshop .experience-card {
   background: rgba(255, 255, 255, 0.65);
   border: 1px solid var(--border);
   border-radius: 28px;
@@ -345,33 +348,102 @@ nav {
   transition: transform 0.4s ease;
 }
 
-.home .experience-card:hover {
+.home .experience-card:hover,
+.wkshop .experience-card:hover {
   transform: translateY(-10px);
 }
 
-.home .experience-card img {
+.home .experience-card img,
+.wkshop .experience-card img {
   height: 320px;
 }
 
-.home .experience-card-content {
+.home .experience-card-content,
+.wkshop .experience-card-content {
   padding: 2rem;
 }
 
-.home .experience-card h4 {
+.home .experience-card h4,
+.wkshop .experience-card h4 {
   font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
   margin-bottom: 0.7rem;
   color: var(--primary);
 }
 
-.home .experience-card p {
+.home .experience-card p,
+.wkshop .experience-card p {
   color: var(--muted);
   line-height: 1.8;
 }
 
+/* WORKSHOP REGISTER */
+
+.wkshop .workshop-experience-grid {
+  margin-bottom: 4rem;
+}
+
+.wkshop .register-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: var(--shadow);
+}
+
+.wkshop .register-content {
+  padding: 4rem;
+}
+
+.wkshop .register-title {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.wkshop .register-description {
+  margin-bottom: 2rem;
+}
+
+.wkshop .register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.wkshop .register-form input {
+  padding: 1rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  outline: none;
+}
+
+.wkshop .register-form button {
+  padding: 1rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.35s ease;
+}
+
+.wkshop .register-form button:hover {
+  transform: translateY(-3px);
+}
+
+.wkshop .register-image img {
+  height: 100%;
+  min-height: 620px;
+  object-fit: cover;
+}
+
 /* NEWSLETTER */
 
-.home .newsletter {
+.home .newsletter,
+.wkshop .newsletter {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -383,29 +455,34 @@ nav {
   overflow: hidden;
 }
 
-.home .newsletter-content {
+.home .newsletter-content,
+.wkshop .newsletter-content {
   padding: 4rem;
 }
 
-.home .newsletter-content h2 {
+.home .newsletter-content h2,
+.wkshop .newsletter-content h2 {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(3rem, 5vw, 5rem);
   margin-bottom: 1rem;
 }
 
-.home .newsletter-content p {
+.home .newsletter-content p,
+.wkshop .newsletter-content p {
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.8;
   margin-bottom: 2rem;
 }
 
-.home .newsletter form {
+.home .newsletter form,
+.wkshop .newsletter form {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.home .newsletter input {
+.home .newsletter input,
+.wkshop .newsletter input {
   flex: 1;
   min-width: 240px;
   padding: 1rem 1.2rem;
@@ -414,7 +491,8 @@ nav {
   outline: none;
 }
 
-.home .newsletter button {
+.home .newsletter button,
+.wkshop .newsletter button {
   padding: 1rem 1.6rem;
   border-radius: 999px;
   border: none;
@@ -424,30 +502,38 @@ nav {
   transition: 0.35s ease;
 }
 
-.home .newsletter button:hover {
+.home .newsletter button:hover,
+.wkshop .newsletter button:hover {
   transform: translateY(-3px);
 }
 
-.home .newsletter img {
+.home .newsletter img,
+.wkshop .newsletter img {
   height: 100%;
   min-height: 500px;
 }
 
 /* FOOTER */
 
-.home footer {
+.home footer,
+.wkshop footer,
+.offers footer {
   padding: 5rem 8% 3rem;
   border-top: 1px solid var(--border);
 }
 
-.home .footer-grid {
+.home .footer-grid,
+.wkshop .footer-grid,
+.offers .footer-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr;
   gap: 3rem;
   margin-bottom: 3rem;
 }
 
-.home .footer-brand h3 {
+.home .footer-brand h3,
+.wkshop .footer-brand h3,
+.offers .footer-brand h3 {
   font-family: "Cormorant Garamond", serif;
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -456,18 +542,28 @@ nav {
 
 .home .footer-brand p,
 .home .footer-links a,
-.home .footer-contact p {
+.home .footer-contact p,
+.wkshop .footer-brand p,
+.wkshop .footer-links a,
+.wkshop .footer-contact p,
+.offers .footer-brand p,
+.offers .footer-links a,
+.offers .footer-contact p {
   color: var(--muted);
   line-height: 2;
 }
 
-.home .footer-links {
+.home .footer-links,
+.wkshop .footer-links,
+.offers .footer-links {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
 
-.home .footer-bottom {
+.home .footer-bottom,
+.wkshop .footer-bottom,
+.offers .footer-bottom {
   padding-top: 2rem;
   border-top: 1px solid var(--border);
   color: var(--muted);
@@ -479,7 +575,8 @@ nav {
 
 /* MODAL */
 
-.home .modal {
+.home .modal,
+.wkshop .modal {
   position: fixed;
   inset: 0;
   background: rgba(18, 12, 8, 0.72);
@@ -493,12 +590,14 @@ nav {
   padding: 1.5rem;
 }
 
-.home .modal.active {
+.home .modal.active,
+.wkshop .modal.active {
   opacity: 1;
   pointer-events: auto;
 }
 
-.home .modal-content {
+.home .modal-content,
+.wkshop .modal-content {
   background: var(--bg);
   border-radius: 28px;
   overflow: hidden;
@@ -509,19 +608,22 @@ nav {
   position: relative;
 }
 
-.home .modal-content img {
+.home .modal-content img,
+.wkshop .modal-content img {
   height: 100%;
   min-height: 500px;
 }
 
-.home .modal-info {
+.home .modal-info,
+.wkshop .modal-info {
   padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.home .modal-info h2 {
+.home .modal-info h2,
+.wkshop .modal-info h2 {
   font-family: "Cormorant Garamond", serif;
   font-size: 4rem;
   line-height: 0.95;
@@ -529,13 +631,15 @@ nav {
   color: var(--primary);
 }
 
-.home .modal-info p {
+.home .modal-info p,
+.wkshop .modal-info p {
   color: var(--muted);
   line-height: 1.8;
   margin-bottom: 2rem;
 }
 
-.home .modal-info input {
+.home .modal-info input,
+.wkshop .modal-info input {
   width: 100%;
   padding: 1rem 1.2rem;
   border-radius: 999px;
@@ -545,7 +649,8 @@ nav {
   background: transparent;
 }
 
-.home .modal-info button {
+.home .modal-info button,
+.wkshop .modal-info button {
   padding: 1rem;
   border: none;
   border-radius: 999px;
@@ -554,7 +659,8 @@ nav {
   cursor: pointer;
 }
 
-.home .close-modal {
+.home .close-modal,
+.wkshop .close-modal {
   position: absolute;
   top: 20px;
   right: 24px;
@@ -565,13 +671,15 @@ nav {
 
 /* ANIMATION */
 
-.home .reveal {
+.home .reveal,
+.wkshop .reveal {
   opacity: 0;
   transform: translateY(50px);
   transition: all 1s ease;
 }
 
-.home .reveal.active {
+.home .reveal.active,
+.wkshop .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
@@ -589,7 +697,11 @@ nav {
   .home .hero,
   .home .story,
   .home .newsletter,
-  .home .modal-content {
+  .home .modal-content,
+  .wkshop .hero,
+  .wkshop .story,
+  .wkshop .newsletter,
+  .wkshop .modal-content {
     grid-template-columns: 1fr;
   }
 
@@ -598,7 +710,10 @@ nav {
   }
 
   .home .experience-grid,
-  .home .footer-grid {
+  .home .footer-grid,
+  .wkshop .experience-grid,
+  .wkshop .footer-grid,
+  .wkshop .register-card {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -608,15 +723,18 @@ nav {
 }
 
 @media (max-width: 768px) {
-  .home section {
+  .home section,
+  .wkshop section {
     padding: 5rem 6%;
   }
 
-  .home nav {
+  .home nav,
+  .wkshop nav {
     padding: 1.4rem 6%;
   }
 
-  .home .nav-links {
+  .home .nav-links,
+  .wkshop .nav-links {
     position: absolute;
     top: 100%;
     right: 6%;
@@ -631,13 +749,15 @@ nav {
     transition: 0.3s ease;
   }
 
-  .home .nav-links.active {
+  .home .nav-links.active,
+  .wkshop .nav-links.active {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
   }
 
-  .home .menu-btn {
+  .home .menu-btn,
+  .wkshop .menu-btn {
     display: block;
   }
 
@@ -658,20 +778,28 @@ nav {
   }
 
   .home .experience-grid,
-  .home .footer-grid {
+  .home .footer-grid,
+  .wkshop .experience-grid,
+  .wkshop .footer-grid,
+  .wkshop .register-card {
     grid-template-columns: 1fr;
   }
 
-  .home .newsletter {
+  .home .newsletter,
+  .wkshop .newsletter {
     margin: 0 6% 5rem;
   }
 
   .home .newsletter-content,
-  .home .modal-info {
+  .home .modal-info,
+  .wkshop .register-content,
+  .wkshop .newsletter-content,
+  .wkshop .modal-info {
     padding: 3rem 2rem;
   }
 
-  .home .modal-content img {
+  .home .modal-content img,
+  .wkshop .modal-content img {
     display: none;
   }
 }
@@ -1194,368 +1322,7 @@ COFFEE SELECTION SECTION */
   }
 }
 
-/* work shop ........................................................................................................................................... */
-
-/* RESET */
-.wkshop * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.wkshop {
-  font-family: "Inter", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
-}
-
-.wkshop img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-.wkshop a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* LAYOUT */
-.wkshop section {
-  padding: 6rem 8%;
-}
-
-/* TYPOGRAPHY */
-.wkshop .section-title {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  line-height: 0.95;
-  margin-bottom: 1.2rem;
-  color: var(--primary);
-  font-weight: 600;
-  max-width: 700px;
-}
-
-.wkshop .section-description {
-  color: var(--muted);
-  line-height: 1.8;
-  max-width: 650px;
-  font-size: 1rem;
-}
-
-/* NAVBAR */
-.wkshop header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  transition: 0.4s ease;
-}
-
-.wkshop header.scrolled {
-  background: rgba(244, 239, 231, 0.92);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-.wkshop nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.6rem 8%;
-}
-
-.wkshop .logo {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--primary);
-}
-
-.wkshop .nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.wkshop .nav-links a {
-  position: relative;
-  font-size: 0.95rem;
-  color: var(--primary);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding-bottom: 0.4rem;
-}
-
-.wkshop .nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--accent);
-  transition: width 0.35s ease;
-}
-
-.wkshop .nav-links a:hover::after {
-  width: 100%;
-}
-
-.wkshop .menu-btn {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--primary);
-}
-
-/* EXPERIENCE */
-.wkshop .experience-grid {
-  margin-top: 4rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.wkshop .experience-card {
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid var(--border);
-  border-radius: 28px;
-  overflow: hidden;
-  transition: transform 0.4s ease;
-}
-
-.wkshop .experience-card:hover {
-  transform: translateY(-10px);
-}
-
-.wkshop .experience-card img {
-  height: 320px;
-}
-
-.wkshop .experience-card-content {
-  padding: 2rem;
-}
-
-.wkshop .experience-card h4 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
-  margin-bottom: 0.7rem;
-  color: var(--primary);
-}
-
-.wkshop .experience-card p {
-  color: var(--muted);
-  line-height: 1.8;
-}
-
-/* NEWSLETTER */
-.wkshop .newsletter {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 3rem;
-  background: var(--soft);
-  color: #fff;
-  border-radius: 32px;
-  margin: 0 8% 6rem;
-  overflow: hidden;
-}
-
-.wkshop .newsletter-content {
-  padding: 4rem;
-}
-
-.wkshop .newsletter-content h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3rem, 5vw, 5rem);
-  margin-bottom: 1rem;
-}
-
-.wkshop .newsletter-content p {
-  color: rgba(255, 255, 255, 0.72);
-  line-height: 1.8;
-  margin-bottom: 2rem;
-}
-
-.wkshop .newsletter form {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.wkshop .newsletter input {
-  flex: 1;
-  min-width: 240px;
-  padding: 1rem 1.2rem;
-  border-radius: 999px;
-  border: none;
-  outline: none;
-}
-
-.wkshop .newsletter button {
-  padding: 1rem 1.6rem;
-  border-radius: 999px;
-  border: none;
-  background: var(--accent);
-  color: #fff;
-  cursor: pointer;
-  transition: 0.35s ease;
-}
-
-.wkshop .newsletter button:hover {
-  transform: translateY(-3px);
-}
-
-.wkshop .newsletter img {
-  height: 100%;
-  min-height: 500px;
-}
-
-/* FOOTER */
-.wkshop footer {
-  padding: 5rem 8% 3rem;
-  border-top: 1px solid var(--border);
-}
-
-.wkshop .footer-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 3rem;
-}
-
-.wkshop .footer-brand h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--primary);
-}
-
-.wkshop .footer-brand p,
-.wkshop .footer-links a,
-.wkshop .footer-contact p {
-  color: var(--muted);
-  line-height: 2;
-}
-
-.wkshop .footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.wkshop .footer-bottom {
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-/* MODAL */
-.wkshop .modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(18, 12, 8, 0.72);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.4s ease;
-  padding: 1.5rem;
-}
-
-.wkshop .modal.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.wkshop .modal-content {
-  background: var(--bg);
-  border-radius: 28px;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: 950px;
-  width: 100%;
-  position: relative;
-}
-
-.wkshop .modal-content img {
-  height: 100%;
-  min-height: 500px;
-}
-
-.wkshop .modal-info {
-  padding: 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.wkshop .modal-info h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 4rem;
-  line-height: 0.95;
-  margin-bottom: 1.5rem;
-  color: var(--primary);
-}
-
-.wkshop .modal-info p {
-  color: var(--muted);
-  line-height: 1.8;
-  margin-bottom: 2rem;
-}
-
-.wkshop .modal-info input {
-  width: 100%;
-  padding: 1rem 1.2rem;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  margin-bottom: 1rem;
-  outline: none;
-  background: transparent;
-}
-
-.wkshop .modal-info button {
-  padding: 1rem;
-  border: none;
-  border-radius: 999px;
-  background: var(--primary);
-  color: #fff;
-  cursor: pointer;
-}
-
-.wkshop .close-modal {
-  position: absolute;
-  top: 20px;
-  right: 24px;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--primary);
-}
-
-/* ANIMATION */
-.wkshop .reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s ease;
-}
-
-.wkshop .reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* CONTACT */
+/* work shop contact */
 .contact-section {
   max-width: 1200px;
   margin: auto;
@@ -1637,73 +1404,7 @@ COFFEE SELECTION SECTION */
   transform: translateY(-3px);
 }
 
-/* RESPONSIVE */
-@media (max-width: 1100px) {
-  .wkshop .hero,
-  .wkshop .story,
-  .wkshop .newsletter,
-  .wkshop .modal-content {
-    grid-template-columns: 1fr;
-  }
-
-  .wkshop .experience-grid,
-  .wkshop .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 @media (max-width: 768px) {
-  .wkshop section {
-    padding: 5rem 6%;
-  }
-
-  .wkshop nav {
-    padding: 1.4rem 6%;
-  }
-
-  .wkshop .nav-links {
-    position: absolute;
-    top: 100%;
-    right: 6%;
-    background: rgba(244, 239, 231, 0.98);
-    flex-direction: column;
-    padding: 1.5rem;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: 0.3s ease;
-  }
-
-  .wkshop .nav-links.active {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-
-  .wkshop .menu-btn {
-    display: block;
-  }
-
-  .wkshop .experience-grid,
-  .wkshop .footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .wkshop .newsletter {
-    margin: 0 6% 5rem;
-  }
-
-  .wkshop .newsletter-content,
-  .wkshop .modal-info {
-    padding: 3rem 2rem;
-  }
-
-  .wkshop .modal-content img {
-    display: none;
-  }
-
   .wkshop .contact-section {
     flex-direction: column;
   }
@@ -1779,12 +1480,6 @@ COFFEE SELECTION SECTION */
   padding: 18px 6%;
 }
 
-/* .shpcc .nav-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
-
 .shpcc .logo {
   font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
@@ -1825,14 +1520,12 @@ COFFEE SELECTION SECTION */
   border: 1px solid var(--line);
   padding: 0.6rem 1rem;
   font-size: 0.85rem;
+  margin-left: auto;
 }
+
 .shpcc .nav-inner {
   display: flex;
   align-items: center;
-}
-
-.shpcc .cart-counter {
-  margin-left: auto;
 }
 
 /* HERO */
@@ -1932,7 +1625,6 @@ COFFEE SELECTION SECTION */
 }
 
 .shpcc .cart-item:hover {
-  /* transform: translateY(-5px); */
   box-shadow: var(--shadow);
 }
 
@@ -2112,43 +1804,11 @@ COFFEE SELECTION SECTION */
 /* brewing section _______----------------------------------------------------------------- */
 
 .br {
-  --bg: #f2ebe2;
-  --surface: #ebe2d6;
-  --brown: #352117;
-  --soft: #725847;
-  --accent: #9a7a61;
-  --line: rgba(53, 33, 23, 0.14);
-  --white: #fffdfa;
-  --shadow: 0 25px 60px rgba(42, 24, 15, 0.08);
-  --transition: 0.45s ease;
-  --primary: #352117;
-  --muted: #725847;
-}
-
-.br * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-.br {
   font-family: "Inter", sans-serif;
   background: var(--bg);
   color: var(--brown);
   overflow-x: hidden;
   line-height: 1.7;
-}
-
-.br img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-.br a {
-  text-decoration: none;
-  color: inherit;
 }
 
 .br header {
@@ -2161,52 +1821,6 @@ COFFEE SELECTION SECTION */
   background: rgba(244, 239, 231, 0.92);
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-.br nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.6rem 8%;
-}
-
-.br .logo {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--primary);
-}
-
-.br .nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.br .nav-links a {
-  position: relative;
-  font-size: 0.95rem;
-  color: var(--primary);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding-bottom: 0.4rem;
-}
-
-.br .nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--accent);
-  transition: width 0.35s ease;
-}
-
-.nav-links a:hover::after,
-.br .nav-links li.active a::after {
-  width: 100%;
 }
 
 .br .equipment-page {
@@ -2275,7 +1889,7 @@ COFFEE SELECTION SECTION */
   transition: var(--transition);
 }
 
-.filter-btn:hover,
+.br .filter-btn:hover,
 .br .filter-btn.active {
   background: var(--brown);
   color: var(--white);
@@ -2536,29 +2150,11 @@ COFFEE SELECTION SECTION */
 /* special offers section -------------------------------------------------------------- */
 
 .offers {
-  --primary: #352117;
-  --muted: #725847;
-  --border: rgba(53, 33, 23, 0.14);
   font-family: "Inter", sans-serif;
   background: var(--bg);
   color: var(--primary);
   overflow-x: hidden;
   line-height: 1.7;
-}
-
-.offers * {
-  box-sizing: border-box;
-}
-
-.offers img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-.offers a {
-  color: inherit;
-  text-decoration: none;
 }
 
 .offers .grain {
@@ -2570,71 +2166,9 @@ COFFEE SELECTION SECTION */
   z-index: -1;
 }
 
-.offers header {
-  position: fixed;
-  inset: 0 0 auto;
-  width: 100%;
-  z-index: 999;
-  transition: 0.4s ease;
-}
-
-.offers header.scrolled {
-  background: rgba(244, 239, 231, 0.92);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-.offers nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.6rem 8%;
-}
-
-.offers .logo {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
-.offers .nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.offers .nav-links a {
-  position: relative;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding-bottom: 0.4rem;
-}
-
-.offers .nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--accent);
-  transition: width 0.35s ease;
-}
-
-.offers .nav-links a:hover::after,
-.offers .nav-links li.active a::after {
-  width: 100%;
-}
-
 .offers .menu-btn {
-  display: none;
   border: none;
   background: transparent;
-  color: var(--primary);
-  font-size: 2rem;
-  cursor: pointer;
 }
 
 .offers .eyebrow {
@@ -2850,6 +2384,9 @@ COFFEE SELECTION SECTION */
 
 .offers .offer-card-content {
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
 }
 
 .offers .offer-type {
@@ -2870,12 +2407,6 @@ COFFEE SELECTION SECTION */
 .offers .offer-card-content > p:not(.offer-type) {
   color: var(--muted);
   margin-bottom: 1.5rem;
-}
-
-.offers .offer-card-content {
-  display: flex;
-  flex-direction: column;
-  min-height: 360px;
 }
 
 .offers .offer-meta {
@@ -2927,47 +2458,6 @@ COFFEE SELECTION SECTION */
 
 .offers .offer-feature img {
   height: 560px;
-}
-
-.offers footer {
-  padding: 5rem 8% 3rem;
-  border-top: 1px solid var(--border);
-}
-
-.offers .footer-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 3rem;
-}
-
-.offers .footer-brand h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.offers .footer-brand p,
-.offers .footer-links a,
-.offers .footer-contact p {
-  color: var(--muted);
-  line-height: 2;
-}
-
-.offers .footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.offers .footer-bottom {
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
 }
 
 .offers .reveal {

@@ -23,7 +23,6 @@
 
     <link rel="stylesheet" href="style2.css" />
 
-    <style></style>
   </head>
   <body class="wkshop">
     <!-- MODAL -->
@@ -59,7 +58,7 @@
 
           <li><a href="brewing3.html">Equipment</a></li>
 
-          <li><a href="eventWorkshopC.html">Events</a></li>
+          <li class="active"><a href="eventWorkshopC.html">Events</a></li>
           <li><a href="shpcc.html">Cart</a></li>
 
           <li><a href="offers.html">Offers</a></li>
@@ -79,10 +78,10 @@
         conversations with master roasters.
       </p>
 
-      <div class="experience-grid" style="margin-bottom: 4rem">
+      <div class="experience-grid workshop-experience-grid">
         <div class="experience-card">
           <img
-            src="https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1200&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1558996163-68db2afefba6?q=80&w=1200&auto=format&fit=crop"
             alt="Coffee Tasting"
           />
           <div class="experience-card-content">
@@ -96,7 +95,7 @@
 
         <div class="experience-card">
           <img
-            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1592541603780-7dbbdc334b8a?q=80&w=1200&auto=format&fit=crop"
             alt="Brewing Workshop"
           />
           <div class="experience-card-content">
@@ -110,7 +109,7 @@
 
         <div class="experience-card">
           <img
-            src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?q=80&w=1200&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1558618666-397fb0670f29?q=80&w=1200&auto=format&fit=crop"
             alt="Meet Roaster"
           />
           <div class="experience-card-content">
@@ -123,26 +122,13 @@
         </div>
       </div>
 
-      <div
-        style="
-          background: rgba(255, 255, 255, 0.72);
-          border: 1px solid var(--border);
-          border-radius: 32px;
-          overflow: hidden;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          box-shadow: var(--shadow);
-        "
-      >
-        <div style="padding: 4rem">
+      <div class="register-card">
+        <div class="register-content">
           <p class="eyebrow">Reserve Your Seat</p>
-          <h2
-            class="section-title"
-            style="font-size: clamp(2.5rem, 4vw, 4rem); margin-bottom: 1rem"
-          >
+          <h2 class="section-title register-title">
             Register For Upcoming Gatherings.
           </h2>
-          <p class="section-description" style="margin-bottom: 2rem">
+          <p class="section-description register-description">
             Sign up for our upcoming workshops and coffee rituals. Spaces are
             intentionally limited to preserve an intimate atmosphere.
           </p>
@@ -151,20 +137,13 @@
             action="mailto:hello@culturedbean.com"
             method="post"
             enctype="text/plain"
-            style="display: flex; flex-direction: column; gap: 1rem"
+            class="register-form"
           >
             <input
               type="text"
               name="First Name"
               placeholder="First Name"
               required
-              style="
-                padding: 1rem 1.2rem;
-                border-radius: 999px;
-                border: 1px solid var(--border);
-                background: transparent;
-                outline: none;
-              "
             />
 
             <input
@@ -172,13 +151,6 @@
               name="Last Name"
               placeholder="Last Name"
               required
-              style="
-                padding: 1rem 1.2rem;
-                border-radius: 999px;
-                border: 1px solid var(--border);
-                background: transparent;
-                outline: none;
-              "
             />
 
             <input
@@ -186,37 +158,18 @@
               name="Email"
               placeholder="Email Address"
               required
-              style="
-                padding: 1rem 1.2rem;
-                border-radius: 999px;
-                border: 1px solid var(--border);
-                background: transparent;
-                outline: none;
-              "
             />
 
-            <button
-              type="submit"
-              style="
-                padding: 1rem;
-                border: none;
-                border-radius: 999px;
-                background: var(--primary);
-                color: #fff;
-                cursor: pointer;
-                transition: 0.35s ease;
-              "
-            >
+            <button type="submit">
               Register Now
             </button>
           </form>
         </div>
 
-        <div>
+        <div class="register-image">
           <img
             src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=1400&auto=format&fit=crop"
             alt="Coffee Workshop"
-            style="height: 100%; min-height: 620px; object-fit: cover"
           />
         </div>
       </div>

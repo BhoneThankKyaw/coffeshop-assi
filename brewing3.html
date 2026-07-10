@@ -26,10 +26,9 @@
 
           <li><a href="cs2.html">Coffee</a></li>
 
-          <li><a href="brewing3.html" class="active">Equipment</a></li>
+          <li class="active"><a href="brewing3.html">Equipment</a></li>
 
           <li><a href="eventWorkshopC.html">Events</a></li>
-          <li><a href="shpcc.html">Cart</a></li>
 
           <li><a href="offers.html">Offers</a></li>
         </ul>
@@ -91,7 +90,7 @@
           stars: "★★★★★",
           description: "Perfect for clean, smooth and slow-brewed coffee.",
           image:
-            "https://images.unsplash.com/photo-1517705008128-361805f42e86?w=900",
+            "https://images.unsplash.com/photo-1743677131349-0e4832394fec?q=80&w=900&auto=format&fit=crop",
         },
         {
           name: "French Press",
@@ -101,7 +100,7 @@
           stars: "★★★★☆",
           description: "Creates rich coffee with bold and full flavor.",
           image:
-            "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900",
+            "https://images.unsplash.com/photo-1639906512494-dd4a536abc4e?q=80&w=900&auto=format&fit=crop",
         },
         {
           name: "Manual Grinder",
@@ -111,7 +110,7 @@
           stars: "★★★★★",
           description: "Grind fresh beans for better aroma and taste.",
           image:
-            "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=900",
+            "https://images.unsplash.com/photo-1646346834998-5b610ec21d12?q=80&w=900&auto=format&fit=crop",
         },
         {
           name: "Gooseneck Kettle",
@@ -121,7 +120,7 @@
           stars: "★★★★★",
           description: "Control water flow for perfect pour-over brewing.",
           image:
-            "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900",
+            "https://images.unsplash.com/photo-1592417766326-088bf3da80c5?q=80&w=900&auto=format&fit=crop",
         },
         {
           name: "Coffee Scale",
@@ -131,7 +130,7 @@
           stars: "★★★★☆",
           description: "Measure coffee and water accurately every time.",
           image:
-            "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=900",
+            "https://images.unsplash.com/photo-1581446974083-41ed1a460587?q=80&w=900&auto=format&fit=crop",
         },
         {
           name: "Moka Pot",
@@ -141,7 +140,7 @@
           stars: "★★★★☆",
           description: "Classic stovetop brewer for strong coffee flavor.",
           image:
-            "https://images.unsplash.com/photo-1522992319-0365e5f11656?w=900",
+            "https://images.unsplash.com/photo-1528402041550-b16e40dd8b81?q=80&w=900&auto=format&fit=crop",
         },
       ];
 
@@ -179,6 +178,10 @@
       );
 
       cartCountText.textContent = cartCount;
+
+      cartBox.addEventListener("click", () => {
+        window.location.href = "shpcc.html";
+      });
 
       // ADD TO CART
       buttons.forEach((button) => {
