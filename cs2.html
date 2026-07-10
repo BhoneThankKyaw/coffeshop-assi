@@ -89,7 +89,7 @@
             <input
               type="text"
               id="searchInput"
-              placeholder="Search coffees, origins, tasting notes..."
+              placeholder="Search coffees, origins,notes..."
             />
             <div class="animated-search" id="typingText"></div>
           </div>
@@ -125,6 +125,20 @@
 
       <div class="swiper coffeeSwiper" data-aos="fade-up">
         <div class="swiper-wrapper" id="coffeeContainer"></div>
+        <button
+          type="button"
+          class="coffee-slider-arrow coffee-slider-prev"
+          aria-label="Previous coffee"
+        >
+          ‹
+        </button>
+        <button
+          type="button"
+          class="coffee-slider-arrow coffee-slider-next"
+          aria-label="Next coffee"
+        >
+          ›
+        </button>
       </div>
     </section>
 
@@ -320,12 +334,15 @@
         grabCursor: true,
         observer: true,
         observeParents: true,
+        navigation: {
+          prevEl: ".coffee-slider-prev",
+          nextEl: ".coffee-slider-next",
+        },
 
         breakpoints: {
           0: {
-            slidesPerView: "auto",
+            slidesPerView: 1,
             spaceBetween: 16,
-            freeMode: true,
           },
           640: {
             slidesPerView: 1.5,
