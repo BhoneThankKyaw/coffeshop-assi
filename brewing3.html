@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brewing Equipment</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@500;600;700&display=swap"
       rel="stylesheet"
-    />
+    >
 
     <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="style2.css">
   </head>
 
   <body class="br">
@@ -48,21 +48,21 @@
     </header>
 
     <main class="equipment-page">
-      <section class="top-area" data-aos="fade-up">
+      <div class="top-area" data-aos="fade-up">
         <span>Home Brewing Collection</span>
         <h1>Brewing Equipment</h1>
         <p>
           Discover warm, simple and beautiful brewing tools for making
           café-quality coffee at home.
         </p>
-      </section>
+      </div>
 
       <div class="search-wrap" data-aos="fade-up" data-aos-delay="150">
         <input
           type="text"
           id="searchInput"
           placeholder="Search brewing equipment..."
-        />
+        >
       </div>
 
       <div class="filter-buttons" data-aos="fade-up" data-aos-delay="250">
@@ -72,7 +72,7 @@
         <button class="filter-btn" data-filter="tools">Tools</button>
       </div>
 
-      <section class="equipment-grid" id="equipmentGrid"></section>
+      <div class="equipment-grid" id="equipmentGrid"></div>
     </main>
 
     <div class="cart-box">
@@ -178,7 +178,7 @@
 <div class="card-img"><img src="${item.image}" alt="${item.name}"></div>
 <div class="card-content">
 <span class="tag">${item.tag}</span>
-<h3>${item.name}</h3>
+<h2>${item.name}</h2>
 <p>${item.description}</p>
 <p class="usage-tip">${item.tip}</p>
 <div class="price-row">

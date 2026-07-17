@@ -243,7 +243,7 @@ nav {
   box-shadow: var(--shadow);
 }
 
-.home .floating-card h4 {
+.home .floating-card h2 {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
@@ -374,8 +374,8 @@ nav {
   padding: 2rem;
 }
 
-.home .experience-card h4,
-.wkshop .experience-card h4 {
+.home .experience-card h3,
+.wkshop .experience-card h3 {
   font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
   margin-bottom: 0.7rem;
@@ -2229,7 +2229,7 @@ COFFEE SELECTION SECTION */
   margin-bottom: 0.8rem;
 }
 
-.br .card-content h3 {
+.br .card-content h2 {
   font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
   margin-bottom: 0.4rem;
