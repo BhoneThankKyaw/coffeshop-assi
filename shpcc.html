@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Shopping Cart | Bean Boutique</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap"
       rel="stylesheet"
-    />
+    >
 
-    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="style2.css">
   </head>
   <body class="shpcc">
     <div class="grain"></div>
@@ -51,7 +51,7 @@
       <div class="section-header reveal">
         <div>
           <div class="eyebrow">Current Selection</div>
-          <h2>Your Collection</h2>
+          <h1>Your Collection</h1>
         </div>
 
         <p>
@@ -64,7 +64,7 @@
         <div class="cart-items" id="cartItems"></div>
 
         <aside class="summary reveal">
-          <h3>Order Summary</h3>
+          <h2>Order Summary</h2>
 
           <div class="summary-row">
             <span>Products</span>
@@ -171,11 +171,11 @@
 
           cartItemsContainer.innerHTML += `
       <div class="cart-item reveal">
-        <img src="${item.image}" alt="${item.name}" />
+        <img src="${item.image}" alt="${item.name}">
 
         <div class="product-meta">
           <small>${item.origin}</small>
-          <h3>${item.name}</h3>
+          <h2>${item.name}</h2>
 
           <div class="quantity">
             <button onclick="changeQty(${index}, -1)">-</button>
