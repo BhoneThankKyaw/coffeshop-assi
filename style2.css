@@ -727,6 +727,115 @@ nav {
   color: var(--primary);
 }
 
+/* FORM SUCCESS MODAL */
+
+.form-success-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 12000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(18, 12, 8, 0.72);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.form-success-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.form-success-dialog {
+  position: relative;
+  width: min(520px, 100%);
+  padding: 3.5rem;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: var(--bg);
+  box-shadow: 0 30px 80px rgba(18, 12, 8, 0.28);
+  color: var(--primary);
+  text-align: center;
+  transform: translateY(24px) scale(0.96);
+  transition: transform 0.35s ease;
+}
+
+.form-success-modal.active .form-success-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.form-success-icon {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: #3b8d4a;
+  color: #fff;
+  font-size: 2rem;
+  box-shadow: 0 14px 30px rgba(59, 141, 74, 0.25);
+}
+
+.form-success-dialog .eyebrow {
+  margin-bottom: 0.8rem;
+  color: var(--accent);
+}
+
+.form-success-dialog h2 {
+  margin-bottom: 1rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  line-height: 1;
+}
+
+.form-success-dialog > p:not(.eyebrow) {
+  margin-bottom: 2rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.form-success-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  border: 0;
+  background: transparent;
+  color: var(--primary);
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.form-success-confirm {
+  min-width: 160px;
+  padding: 0.95rem 1.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--white);
+  cursor: pointer;
+  font: inherit;
+  transition: 0.3s ease;
+}
+
+.form-success-confirm:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+.form-modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 560px) {
+  .form-success-dialog {
+    padding: 3rem 1.5rem 2rem;
+  }
+}
+
 /* ANIMATION */
 
 .home .reveal,

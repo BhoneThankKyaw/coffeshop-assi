@@ -217,7 +217,11 @@
           </p>
         </div>
 
-        <form class="subscription-form">
+        <form
+          class="subscription-form js-success-form"
+          data-success-title="Subscription Confirmed!"
+          data-success-message="Your registration was successful. We will email you with the details of your selected coffee plan."
+        >
           <label for="subscriberName">Name</label>
           <input
             type="text"
@@ -248,6 +252,31 @@
         </form>
       </section>
     </main>
+
+    <div
+      class="form-success-modal"
+      id="formSuccessModal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="formSuccessTitle"
+      aria-describedby="formSuccessMessage"
+    >
+      <div class="form-success-dialog">
+        <button
+          type="button"
+          class="form-success-close"
+          aria-label="Close success message"
+        >
+          &times;
+        </button>
+        <div class="form-success-icon" aria-hidden="true">✓</div>
+        <p class="eyebrow">Registration Complete</p>
+        <h2 id="formSuccessTitle">Registration Successful!</h2>
+        <p id="formSuccessMessage">Your information was submitted successfully.</p>
+        <button type="button" class="form-success-confirm">Continue</button>
+      </div>
+    </div>
 
     <footer>
       <div class="footer-grid">
@@ -310,5 +339,6 @@
       window.addEventListener("scroll", revealOnScroll);
       revealOnScroll();
     </script>
+    <script src="form-success.js"></script>
   </body>
 </html>

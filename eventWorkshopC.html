@@ -146,7 +146,9 @@
             action="mailto:hello@beanboutique.com"
             method="post"
             enctype="text/plain"
-            class="register-form"
+            class="register-form js-success-form"
+            data-success-title="Your Seat Is Reserved!"
+            data-success-message="Your workshop registration was successful. We will contact you by email with the event details."
           >
             <label for="registrationFirstName">First Name</label>
             <input
@@ -200,8 +202,18 @@
           from the world of specialty coffee.
         </p>
 
-        <form>
-          <input type="email" placeholder="Your email address">
+        <form
+          class="js-success-form"
+          data-success-title="Welcome To Our Coffee Circle!"
+          data-success-message="Your registration was successful. We will send community news and workshop invitations to your email."
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email address"
+            aria-label="Email address"
+            required
+          >
           <button type="submit">Join Community</button>
         </form>
       </div>
@@ -272,6 +284,31 @@
         </div>
       </div>
     </section>
+    <div
+      class="form-success-modal"
+      id="formSuccessModal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="formSuccessTitle"
+      aria-describedby="formSuccessMessage"
+    >
+      <div class="form-success-dialog">
+        <button
+          type="button"
+          class="form-success-close"
+          aria-label="Close success message"
+        >
+          &times;
+        </button>
+        <div class="form-success-icon" aria-hidden="true">✓</div>
+        <p class="eyebrow">Registration Complete</p>
+        <h2 id="formSuccessTitle">Registration Successful!</h2>
+        <p id="formSuccessMessage">Your information was submitted successfully.</p>
+        <button type="button" class="form-success-confirm">Continue</button>
+      </div>
+    </div>
+
     <!-- FOOTER -->
     <footer>
       <div class="footer-grid">
@@ -383,5 +420,6 @@
         }
       });
     </script>
+    <script src="form-success.js"></script>
   </body>
 </html>
